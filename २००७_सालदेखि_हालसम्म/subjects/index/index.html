@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Comprehensive documentation of Nepal's political journey and election data">
+    <meta name="theme-color" content="#4f46e5">
+    <title>Nepal Political History & Elections Data</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <div class="header-main">
+                <div class="logo-section">
+                    <h1><i class="fas fa-landmark"></i> Nepali Political History</h1>
+                    <p class="subtitle">Comprehensive documentation of Nepal's political journey and election data</p>
+                </div>
+                
+                <div class="header-actions">
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu" aria-expanded="false">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="app-body">
+            <!-- Mobile Overlay -->
+            <div class="sidebar-overlay" id="sidebarOverlay"></div>
+            
+            <!-- Sidebar Navigation -->
+            <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+                <nav class="nav-menu" aria-label="Historical Events and Elections">
+                    <div class="nav-section">
+                        <h3><i class="fas fa-history"></i> Historical Events</h3>
+                        <ul>
+                            <li><a href="#revolution-2007" class="nav-link active" data-unit="revolution2007" role="button" tabindex="0">
+                                <i class="fas fa-star-of-life"></i> 2007 BS Revolution
+                            </a></li>
+                            <li><a href="#first-cabinet" class="nav-link" data-unit="firstCabinet" role="button" tabindex="0">
+                                <i class="fas fa-users"></i> First Democratic Cabinet
+                            </a></li>
+                            <li><a href="#political-parties" class="nav-link" data-unit="politicalParties" role="button" tabindex="0">
+                                <i class="fas fa-flag"></i> Early Political Parties
+                            </a></li>
+                            <li><a href="#referendum" class="nav-link" data-unit="referendum" role="button" tabindex="0">
+                                <i class="fas fa-vote-yea"></i> 2037 Referendum
+                            </a></li>
+                            <li><a href="#movement-2046" class="nav-link" data-unit="movement2046" role="button" tabindex="0">
+                                <i class="fas fa-fist-raised"></i> 2046 People's Movement
+                            </a></li>
+                            <li><a href="#movement-2062" class="nav-link" data-unit="movement2062" role="button" tabindex="0">
+                                <i class="fas fa-peace"></i> 2062/63 People's Movement II
+                            </a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="nav-section">
+                        <h3><i class="fas fa-vote-yea"></i> Elections Data</h3>
+                        <ul>
+                            <li><a href="#election-2015" class="nav-link" data-unit="election2015" role="button" tabindex="0">
+                                <i class="fas fa-calendar-alt"></i> First Election 2015 BS
+                            </a></li>
+                            <li><a href="#comparison" class="nav-link" data-unit="electionComparison" role="button" tabindex="0">
+                                <i class="fas fa-chart-bar"></i> Election Comparison
+                            </a></li>
+                            <li><a href="#constituencies" class="nav-link" data-unit="constituencies" role="button" tabindex="0">
+                                <i class="fas fa-map-marked-alt"></i> Constituency Distribution
+                            </a></li>
+                            <li><a href="#local-elections" class="nav-link" data-unit="localElections" role="button" tabindex="0">
+                                <i class="fas fa-city"></i> Local Elections 2075
+                            </a></li>
+                            <li><a href="#federal-elections" class="nav-link" data-unit="federalElections" role="button" tabindex="0">
+                                <i class="fas fa-university"></i> Federal Elections 2074
+                            </a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="nav-section">
+                        <h3><i class="fas fa-info-circle"></i> About</h3>
+                        <ul>
+                            <li><a href="#about" class="nav-link" data-unit="about" role="button" tabindex="0">
+                                <i class="fas fa-book"></i> About This Data
+                            </a></li>
+                        </ul>
+                    </div>
+                </nav>
+                
+                <div class="sidebar-footer">
+                    <p>Data Source: Nepali Political History Records</p>
+                    <p class="last-updated">Last Updated: 2023</p>
+                </div>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="content-area" id="mainContent">
+                <div class="content-header">
+                    <div class="content-header-main">
+                        <h2 id="contentTitle">2007 BS Democratic Revolution</h2>
+                        <div class="content-actions">
+                            <button class="btn-print" id="printBtn" aria-label="Print current section">
+                                <i class="fas fa-print"></i> <span class="btn-text">Print</span>
+                            </button>
+                            <button class="btn-share" id="shareBtn" aria-label="Share current section">
+                                <i class="fas fa-share-alt"></i> <span class="btn-text">Share</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-body" id="contentBody">
+                    <!-- Content will be dynamically loaded here -->
+                    <div class="content-loading" id="contentLoading">
+                        <div class="loading-spinner">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>Loading content...</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-footer">
+                    <div class="pagination">
+                        <button class="btn-prev" id="prevBtn" aria-label="Previous section">
+                            <i class="fas fa-chevron-left"></i> <span class="btn-text">Previous</span>
+                        </button>
+                        <span class="page-indicator" aria-live="polite">
+                            Section <span id="currentPage">1</span> of <span id="totalPages">10</span>
+                        </span>
+                        <button class="btn-next" id="nextBtn" aria-label="Next section">
+                            <span class="btn-text">Next</span> <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+        
+        <footer class="app-footer">
+            <div class="footer-content">
+                <p>© 2023 Log Plus</p>
+                <p class="disclaimer">Data has been refined for clarity and accuracy. Some dates follow the Bikram Sambat (BS) calendar.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="unitesNep.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geography & General Knowledge - भूगोल र सामान्य ज्ञान</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font for Nepali support -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', 'Noto Sans Devanagari', sans-serif;
+        }
+        .nepali {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #3b82f6;
+            font-weight: 600;
+        }
+        .read {
+            background-color: #f0f9ff;
+            border-left: 4px solid #3b82f6;
+        }
+        .search-highlight {
+            background-color: #fef3c7;
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h1 class="text-2xl font-bold text-gray-800">🌍 Geography & GK Master</h1>
+                    <p class="text-gray-600 nepali">भूगोल र सामान्य ज्ञान</p>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="w-full md:w-auto">
+                    <div class="relative">
+                        <input type="text" id="searchInput" placeholder="Search continents, countries, rivers..." 
+                               class="w-full md:w-64 px-4 py-2 pl-10 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <svg class="absolute left-3 top-2.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container mx-auto px-4 py-6">
+        <!-- Stats Bar -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div class="bg-white rounded-lg shadow p-4 text-center">
+                <p class="text-3xl font-bold text-blue-600">7</p>
+                <p class="text-gray-600">Continents</p>
+                <p class="text-sm text-gray-500 nepali">महादेशहरू</p>
+            </div>
+            <div class="bg-white rounded-lg shadow p-4 text-center">
+                <p class="text-3xl font-bold text-green-600">196</p>
+                <p class="text-gray-600">Countries</p>
+                <p class="text-sm text-gray-500 nepali">देशहरू</p>
+            </div>
+            <div class="bg-white rounded-lg shadow p-4 text-center">
+                <p class="text-3xl font-bold text-purple-600">5</p>
+                <p class="text-gray-600">Oceans</p>
+                <p class="text-sm text-gray-500 nepali">महासागरहरू</p>
+            </div>
+            <div class="bg-white rounded-lg shadow p-4 text-center">
+                <p class="text-3xl font-bold text-red-600">10+</p>
+                <p class="text-gray-600">Categories</p>
+                <p class="text-sm text-gray-500 nepali">श्रेणीहरू</p>
+            </div>
+        </div>
+
+        <!-- Tabs Navigation -->
+        <div class="mb-8 overflow-x-auto">
+            <div class="flex space-x-1 border-b">
+                <button class="tab-btn px-4 py-3 font-medium text-gray-600 hover:text-blue-600 whitespace-nowrap" data-tab="continents">
+                    Continents / महादेश
+                </button>
+                <button class="tab-btn px-4 py-3 font-medium text-gray-600 hover:text-blue-600 whitespace-nowrap" data-tab="oceans">
+                    Oceans / महासागर
+                </button>
+                <button class="tab-btn px-4 py-3 font-medium text-gray-600 hover:text-blue-600 whitespace-nowrap" data-tab="rivers">
+                    Rivers / नदीहरू
+                </button>
+                <button class="tab-btn px-4 py-3 font-medium text-gray-600 hover:text-blue-600 whitespace-nowrap" data-tab="mountains">
+                    Mountains / पर्वत
+                </button>
+                <button class="tab-btn px-4 py-3 font-medium text-gray-600 hover:text-blue-600 whitespace-nowrap" data-tab="countries">
+                    Countries / देशहरू
+                </button>
+                <button class="tab-btn px-4 py-3 font-medium text-gray-600 hover:text-blue-600 whitespace-nowrap" data-tab="facts">
+                    World Facts / विश्व तथ्य
+                </button>
+                <button class="tab-btn px-4 py-3 font-medium text-gray-600 hover:text-blue-600 whitespace-nowrap" data-tab="geography">
+                    Geography Basics / भूगोल
+                </button>
+            </div>
+        </div>
+
+        <!-- Progress Stats -->
+        <div class="mb-6 bg-white rounded-lg shadow p-4">
+            <div class="flex justify-between items-center mb-2">
+                <h3 class="font-semibold text-gray-700">Your Progress</h3>
+                <span id="progressPercentage" class="font-bold text-blue-600">0%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div id="progressBar" class="bg-blue-600 h-2.5 rounded-full" style="width: 0%"></div>
+            </div>
+            <p class="text-sm text-gray-500 mt-2"><span id="readCount">0</span> out of <span id="totalSections">0</span> sections marked as read</p>
+        </div>
+
+        <!-- Content Sections -->
+        <div id="contentArea" class="space-y-8">
+            <!-- Content will be loaded here via JavaScript -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-12 py-6">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <p class="nepali">🌐 भूगोल र सामान्य ज्ञानको सम्पूर्ण ज्ञानकोश</p>
+                <p class="mt-2 text-gray-400">© 2024 Geography & GK Master.Log Plus</p>
+                <div class="mt-4 flex justify-center space-x-4">
+                    <button id="markAllRead" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-sm">
+                        Mark All as Read
+                    </button>
+                    <button id="resetProgress" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm">
+                        Reset Progress
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data Structure
+        const geographyData = {
+            // Geography Basics
+            geography: {
+                title: "Geography Basics / भूगोल बेसिक्स",
+                sections: [
+                    {
+                        id: "geo1",
+                        title: "What is Geography? / भूगोल भनेको के हो?",
+                        content: `<div class="space-y-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <p class="font-medium text-blue-800">Geography (भूगोल)</p>
+                                <p>The study of the Earth's surface, its features, inhabitants, and phenomena.</p>
+                                <p class="nepali mt-2">पृथ्वीको सतह, यसको विशेषताहरू, बासिन्दाहरू र घटनाहरूको अध्ययन।</p>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-white p-4 rounded-lg border">
+                                    <p class="font-semibold">Etymology / व्युत्पत्ति</p>
+                                    <p>Greek: <em>geo</em> (earth) + <em>graphia</em> (description)</p>
+                                    <p class="nepali mt-2">ग्रीक: <em>geo</em> (पृथ्वी) + <em>graphia</em> (वर्णन)</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg border">
+                                    <p class="font-semibold">Father of Geography / भूगोलका पिता</p>
+                                    <p><strong>Eratosthenes of Cyrene</strong> (276–194 BCE)</p>
+                                    <p class="nepali mt-2">इराटोस्थेनिज (२७६–१९४ ईसा पूर्व)</p>
+                                    <ul class="mt-2 text-sm space-y-1">
+                                        <li>• First to use "geography" term</li>
+                                        <li>• Calculated Earth's circumference (~39,375 km)</li>
+                                        <li>• Measured axial tilt and Sun-Earth distance</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="font-semibold">Key Facts / मुख्य तथ्यहरू</p>
+                                <table class="w-full mt-2 text-sm">
+                                    <tr class="border-b">
+                                        <td class="py-2 font-medium">Geology (भूगर्भ विज्ञान)</td>
+                                        <td>Study of Earth's crust and solid features</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-2 font-medium">Oceanography (सागर विज्ञान)</td>
+                                        <td>Study of oceans and marine life</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 font-medium">Cartography (मानचित्रण)</td>
+                                        <td>Science of map making</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>`
+                    }
+                ]
+            },
+
+            // Continents Data
+            continents: {
+                title: "Continents of the World / विश्वका महादेशहरू",
+                sections: [
+                    {
+                        id: "cont1",
+                        title: "Asia / एसिया",
+                        content: `<div class="space-y-4">
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                                <div class="bg-blue-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">4.75B</p>
+                                    <p class="text-sm">Population</p>
+                                    <p class="text-xs nepali">जनसंख्या</p>
+                                </div>
+                                <div class="bg-green-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">44.6M km²</p>
+                                    <p class="text-sm">Area</p>
+                                    <p class="text-xs nepali">क्षेत्रफल</p>
+                                </div>
+                                <div class="bg-yellow-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">50+</p>
+                                    <p class="text-sm">Countries</p>
+                                    <p class="text-xs nepali">देशहरू</p>
+                                </div>
+                                <div class="bg-red-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">60%</p>
+                                    <p class="text-sm">World Pop.</p>
+                                    <p class="text-xs nepali">विश्व जनसंख्या</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white border-l-4 border-blue-500 pl-4 py-2">
+                                <p class="font-semibold">Nickname / उपनाम</p>
+                                <p>"Continent of Extremes" or "Home of Man"</p>
+                                <p class="nepali">"विविधताको महादेश" वा "मानवको घर"</p>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <p class="font-semibold mb-2">Highest Point / सर्वोच्च बिन्दु</p>
+                                    <div class="bg-gray-50 p-3 rounded">
+                                        <p>🏔️ Mount Everest (8,848.86 m)</p>
+                                        <p class="nepali text-sm">सगरमाथा (८,८४८.८६ मि.)</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="font-semibold mb-2">Lowest Point / न्यूनतम बिन्दु</p>
+                                    <div class="bg-gray-50 p-3 rounded">
+                                        <p>⚰️ Dead Sea (-427 m below sea level)</p>
+                                        <p class="nepali text-sm">मृत सागर (समुद्र सतहभन्दा ४२७ मि. तल)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <p class="font-semibold mb-2">Major Features / प्रमुख विशेषताहरू</p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <span class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0">1</span>
+                                        <span>Largest continent by area & population</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0">2</span>
+                                        <span>Contains Himalayas (world's highest mountain range)</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0">3</span>
+                                        <span>Major rivers: Yangtze, Yellow, Ganges, Indus, Mekong</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>`
+                    },
+                    {
+                        id: "cont2",
+                        title: "Africa / अफ्रिका",
+                        content: `<div class="space-y-4">
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                                <div class="bg-blue-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">1.46B</p>
+                                    <p class="text-sm">Population</p>
+                                </div>
+                                <div class="bg-green-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">30.4M km²</p>
+                                    <p class="text-sm">Area</p>
+                                </div>
+                                <div class="bg-yellow-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">54</p>
+                                    <p class="text-sm">Countries</p>
+                                </div>
+                                <div class="bg-red-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">18%</p>
+                                    <p class="text-sm">World Pop.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white border-l-4 border-green-500 pl-4 py-2">
+                                <p class="font-semibold">Nickname / उपनाम</p>
+                                <p>"Dark Continent" or "Cradle of Humankind"</p>
+                                <p class="nepali">"कालो महादेश" वा "मानव जातिको उद्गमस्थल"</p>
+                            </div>
+                            
+                            <div>
+                                <p class="font-semibold mb-2">Major Features / प्रमुख विशेषताहरू</p>
+                                <div class="space-y-3">
+                                    <div class="flex items-start">
+                                        <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 mt-1 flex-shrink-0">✓</span>
+                                        <div>
+                                            <p class="font-medium">Longest River</p>
+                                            <p>Nile River (6,650 km) - World's longest</p>
+                                            <p class="nepali text-sm">नाइल नदी (६,६५० कि.मि.) - विश्वकै सबैभन्दा लामो</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 mt-1 flex-shrink-0">✓</span>
+                                        <div>
+                                            <p class="font-medium">Largest Desert</p>
+                                            <p>Sahara Desert (9.2 million km²)</p>
+                                            <p class="nepali text-sm">सहारा मरुभूमि (९.२ लाख वर्ग कि.मि.)</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 mt-1 flex-shrink-0">✓</span>
+                                        <div>
+                                            <p class="font-medium">Highest Peak</p>
+                                            <p>Mount Kilimanjaro (5,895 m) - Africa's highest</p>
+                                            <p class="nepali text-sm">किलिमन्जारो पर्वत (५,८९५ मि.) - अफ्रिकाको सर्वोच्च</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`
+                    },
+                    {
+                        id: "cont3",
+                        title: "North America / उत्तर अमेरिका",
+                        content: `<div class="space-y-4">
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                                <div class="bg-blue-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">604M</p>
+                                    <p class="text-sm">Population</p>
+                                </div>
+                                <div class="bg-green-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">24.7M km²</p>
+                                    <p class="text-sm">Area</p>
+                                </div>
+                                <div class="bg-yellow-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">23</p>
+                                    <p class="text-sm">Countries</p>
+                                </div>
+                                <div class="bg-red-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">7.6%</p>
+                                    <p class="text-sm">World Pop.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white border-l-4 border-purple-500 pl-4 py-2">
+                                <p class="font-semibold">Discovery / खोज</p>
+                                <p>Discovered by Christopher Columbus (1492)</p>
+                                <p class="nepali">क्रिस्टोफर कोलम्बसद्वारा खोज (१४९२)</p>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <p class="font-semibold mb-2">Largest Country / ठूलो देश</p>
+                                    <div class="bg-gray-50 p-3 rounded">
+                                        <p>🇨🇦 Canada (9.98M km²)</p>
+                                        <p class="nepali text-sm">क्यानडा (९९.८ लाख वर्ग कि.मि.)</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="font-semibold mb-2">Highest Point / सर्वोच्च बिन्दु</p>
+                                    <div class="bg-gray-50 p-3 rounded">
+                                        <p>🏔️ Denali/Mt. McKinley (6,190 m)</p>
+                                        <p class="nepali text-sm">डेनाली (६,१९० मि.)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <p class="font-semibold mb-2">Key Features / प्रमुख विशेषताहरू</p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <span class="bg-purple-100 text-purple-800 rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0">🌊</span>
+                                        <span>Great Lakes (largest freshwater system)</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="bg-purple-100 text-purple-800 rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0">🏜️</span>
+                                        <span>Rocky Mountains & Appalachian Mountains</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="bg-purple-100 text-purple-800 rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0">🌉</span>
+                                        <span>Panama Canal connects Atlantic & Pacific</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>`
+                    },
+                    {
+                        id: "cont4",
+                        title: "South America / दक्षिण अमेरिका",
+                        content: `<div class="space-y-4">
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                                <div class="bg-blue-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">442M</p>
+                                    <p class="text-sm">Population</p>
+                                </div>
+                                <div class="bg-green-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">17.8M km²</p>
+                                    <p class="text-sm">Area</p>
+                                </div>
+                                <div class="bg-yellow-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">12</p>
+                                    <p class="text-sm">Countries</p>
+                                </div>
+                                <div class="bg-red-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">5.5%</p>
+                                    <p class="text-sm">World Pop.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white border-l-4 border-yellow-500 pl-4 py-2">
+                                <p class="font-semibold">Major River / प्रमुख नदी</p>
+                                <p>Amazon River - World's largest by discharge volume</p>
+                                <p class="nepali">अमेजन नदी - जलराशीका आधारमा विश्वकै ठूलो</p>
+                            </div>
+                            
+                            <div>
+                                <p class="font-semibold mb-2">World Records / विश्व रेकर्डहरू</p>
+                                <div class="space-y-3">
+                                    <div class="flex items-start">
+                                        <span class="bg-yellow-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-2 flex-shrink-0">1</span>
+                                        <div>
+                                            <p class="font-medium">Longest Mountain Range</p>
+                                            <p>Andes Mountains (7,000 km)</p>
+                                            <p class="nepali text-sm">एण्डिज पर्वत श्रृंखला (७,००० कि.मि.)</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="bg-yellow-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-2 flex-shrink-0">2</span>
+                                        <div>
+                                            <p class="font-medium">Highest Capital City</p>
+                                            <p>La Paz, Bolivia (3,650 m)</p>
+                                            <p class="nepali text-sm">लापाज, बोलिभिया (३,६५० मि.)</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="bg-yellow-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-2 flex-shrink-0">3</span>
+                                        <div>
+                                            <p class="font-medium">Largest Rainforest</p>
+                                            <p>Amazon Rainforest (5.5M km²)</p>
+                                            <p class="nepali text-sm">अमेजन वर्षावन (५५ लाख वर्ग कि.मि.)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`
+                    },
+                    {
+                        id: "cont5",
+                        title: "Europe / युरोप",
+                        content: `<div class="space-y-4">
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                                <div class="bg-blue-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">747M</p>
+                                    <p class="text-sm">Population</p>
+                                </div>
+                                <div class="bg-green-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">10.2M km²</p>
+                                    <p class="text-sm">Area</p>
+                                </div>
+                                <div class="bg-yellow-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">50</p>
+                                    <p class="text-sm">Countries</p>
+                                </div>
+                                <div class="bg-red-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">9.4%</p>
+                                    <p class="text-sm">World Pop.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white border-l-4 border-indigo-500 pl-4 py-2">
+                                <p class="font-semibold">Nickname / उपनाम</p>
+                                <p>"Peninsula of Peninsulas"</p>
+                                <p class="nepali">"प्रायद्वीपको प्रायद्वीप"</p>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <p class="font-semibold mb-2">Highest Point / सर्वोच्च बिन्दु</p>
+                                    <div class="bg-gray-50 p-3 rounded">
+                                        <p>🏔️ Mount Elbrus (5,642 m)</p>
+                                        <p class="nepali text-sm">माउन्ट एल्ब्रुस (५,६४२ मि.)</p>
+                                        <p class="text-xs mt-1">Caucasus Mountains, Russia</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="font-semibold mb-2">Longest River / लामो नदी</p>
+                                    <div class="bg-gray-50 p-3 rounded">
+                                        <p>🌊 Volga River (3,530 km)</p>
+                                        <p class="nepali text-sm">भोल्गा नदी (३,५३० कि.मि.)</p>
+                                        <p class="text-xs mt-1">Flows through Russia to Caspian Sea</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <p class="font-semibold mb-2">Major Features / प्रमुख विशेषताहरू</p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <span class="bg-indigo-100 text-indigo-800 rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0">🏔️</span>
+                                        <span>Alps, Pyrenees, Ural, and Carpathian Mountains</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="bg-indigo-100 text-indigo-800 rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0">🌊</span>
+                                        <span>Danube, Rhine, Seine, and Thames rivers</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="bg-indigo-100 text-indigo-800 rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0">🏛️</span>
+                                        <span>Birthplace of Western civilization and Renaissance</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>`
+                    },
+                    {
+                        id: "cont6",
+                        title: "Australia / अष्ट्रेलिया",
+                        content: `<div class="space-y-4">
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                                <div class="bg-blue-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">45M</p>
+                                    <p class="text-sm">Population</p>
+                                </div>
+                                <div class="bg-green-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">8.6M km²</p>
+                                    <p class="text-sm">Area</p>
+                                </div>
+                                <div class="bg-yellow-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">14</p>
+                                    <p class="text-sm">Countries</p>
+                                </div>
+                                <div class="bg-red-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">0.6%</p>
+                                    <p class="text-sm">World Pop.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white border-l-4 border-red-500 pl-4 py-2">
+                                <p class="font-semibold">Nickname / उपनाम</p>
+                                <p>"Island Continent" or "Land Down Under"</p>
+                                <p class="nepali">"टापु महादेश" वा "तल्लो देश"</p>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <p class="font-semibold mb-2">Largest Country / ठूलो देश</p>
+                                    <div class="bg-gray-50 p-3 rounded">
+                                        <p>🇦🇺 Australia (7.69M km²)</p>
+                                        <p class="nepali text-sm">अष्ट्रेलिया (७६.९ लाख वर्ग कि.मि.)</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="font-semibold mb-2">Highest Point / सर्वोच्च बिन्दु</p>
+                                    <div class="bg-gray-50 p-3 rounded">
+                                        <p>🏔️ Mount Kosciuszko (2,228 m)</p>
+                                        <p class="nepali text-sm">माउन्ट कोसिस्युस्को (२,२२८ मि.)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <p class="font-semibold mb-2">Unique Features / अद्वितीय विशेषताहरू</p>
+                                <div class="space-y-3">
+                                    <div class="flex items-start">
+                                        <span class="bg-red-100 text-red-800 rounded-full w-8 h-8 flex items-center justify-center mr-2 flex-shrink-0">🐨</span>
+                                        <div>
+                                            <p class="font-medium">Unique Wildlife</p>
+                                            <p>Kangaroo, Koala, Platypus, Emu, Wombat</p>
+                                            <p class="nepali text-sm">कंगारु, कोआला, प्ल्याटिपस, एमु, वोम्बाट</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="bg-red-100 text-red-800 rounded-full w-8 h-8 flex items-center justify-center mr-2 flex-shrink-0">🐠</span>
+                                        <div>
+                                            <p class="font-medium">Great Barrier Reef</p>
+                                            <p>World's largest coral reef system</p>
+                                            <p class="nepali text-sm">विश्वको सबैभन्दा ठूलो प्रवाल भित्ता</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="bg-red-100 text-red-800 rounded-full w-8 h-8 flex items-center justify-center mr-2 flex-shrink-0">🏜️</span>
+                                        <div>
+                                            <p class="font-medium">Outback Deserts</p>
+                                            <p>Great Victoria, Simpson, Gibson Deserts</p>
+                                            <p class="nepali text-sm">ग्रेट भिक्टोरिया, सिम्पसन, गिब्सन मरुभूमि</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`
+                    },
+                    {
+                        id: "cont7",
+                        title: "Antarctica / अन्टार्कटिका",
+                        content: `<div class="space-y-4">
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                                <div class="bg-blue-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">~1,000</p>
+                                    <p class="text-sm">Temporary</p>
+                                    <p class="text-xs">Researchers</p>
+                                </div>
+                                <div class="bg-green-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">14M km²</p>
+                                    <p class="text-sm">Area</p>
+                                    <p class="text-xs">(Ice-covered)</p>
+                                </div>
+                                <div class="bg-yellow-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">0</p>
+                                    <p class="text-sm">Permanent</p>
+                                    <p class="text-xs">Residents</p>
+                                </div>
+                                <div class="bg-red-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">90%</p>
+                                    <p class="text-sm">World's Ice</p>
+                                    <p class="text-xs">Stored here</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white border-l-4 border-gray-500 pl-4 py-2">
+                                <p class="font-semibold">Status / स्थिति</p>
+                                <p>International scientific preserve (Antarctic Treaty, 1959)</p>
+                                <p class="nepali">अन्तर्राष्ट्रिय वैज्ञानिक संरक्षित क्षेत्र (अन्टार्कटिक सन्धि, १९५९)</p>
+                            </div>
+                            
+                            <div>
+                                <p class="font-semibold mb-2">Extreme Conditions / चरम अवस्थाहरू</p>
+                                <div class="space-y-3">
+                                    <div class="flex items-start">
+                                        <span class="bg-gray-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-2 flex-shrink-0">🥶</span>
+                                        <div>
+                                            <p class="font-medium">Coldest Place on Earth</p>
+                                            <p>Vostok Station: -89.2°C (record low)</p>
+                                            <p class="nepali text-sm">भोस्तोक स्टेशन: -८९.२° से. (रेकर्ड तापक्रम)</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="bg-gray-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-2 flex-shrink-0">💨</span>
+                                        <div>
+                                            <p class="font-medium">Windiest Continent</p>
+                                            <p>Katabatic winds up to 327 km/h</p>
+                                            <p class="nepali text-sm">क्याटाब्याटिक हावा ३२७ कि.मि./घण्टासम्म</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="bg-gray-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-2 flex-shrink-0">🏔️</span>
+                                        <div>
+                                            <p class="font-medium">Highest Point</p>
+                                            <p>Vinson Massif (4,892 m)</p>
+                                            <p class="nepali text-sm">भिन्सन मासिफ (४,८९२ मि.)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <p class="font-semibold text-blue-800 mb-2">Scientific Importance / वैज्ञानिक महत्त्व</p>
+                                <ul class="space-y-1 text-sm">
+                                    <li>• Climate change research</li>
+                                    <li>• Ice core samples (800,000+ years of climate data)</li>
+                                    <li>• Astronomy observations (clear atmosphere)</li>
+                                    <li>• Marine biology studies</li>
+                                </ul>
+                            </div>
+                        </div>`
+                    }
+                ]
+            },
+
+            // Oceans Data
+            oceans: {
+                title: "Oceans of the World / विश्वका महासागरहरू",
+                sections: [
+                    {
+                        id: "ocean1",
+                        title: "Pacific Ocean / प्रशान्त महासागर",
+                        content: `<div class="space-y-4">
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-center">
+                                <div class="bg-blue-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">165.2M km²</p>
+                                    <p class="text-sm">Area</p>
+                                </div>
+                                <div class="bg-green-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">46%</p>
+                                    <p class="text-sm">Earth's Water</p>
+                                </div>
+                                <div class="bg-red-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">10,994m</p>
+                                    <p class="text-sm">Max Depth</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white border-l-4 border-blue-500 pl-4 py-2">
+                                <p class="font-semibold">Name Origin / नामको उत्पत्ति</p>
+                                <p>"Pacific" = Peaceful (named by Ferdinand Magellan)</p>
+                                <p class="nepali">"प्रशान्त" = शान्त (फर्डिन्याण्ड म्यागलनले नामकरण गरे)</p>
+                            </div>
+                            
+                            <div>
+                                <p class="font-semibold mb-2">Deepest Point / गहिरो बिन्दु</p>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <p class="font-medium">Challenger Deep, Mariana Trench</p>
+                                    <p>Depth: 10,994 meters (36,070 feet)</p>
+                                    <p class="nepali text-sm">गहिराइ: १०,९९४ मिटर (३६,०७० फिट)</p>
+                                    <p class="text-xs mt-2">• Deepest known point on Earth</p>
+                                    <p class="text-xs">• Located near Guam</p>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <p class="font-semibold mb-2">Key Features / प्रमुख विशेषताहरू</p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <span class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0">🌋</span>
+                                        <span>"Ring of Fire" - 75% of world's volcanoes</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0">🏝️</span>
+                                        <span>25,000+ islands (most of any ocean)</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0">📉</span>
+                                        <span>Shrinking by 1 inch/year due to plate tectonics</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>`
+                    },
+                    {
+                        id: "ocean2",
+                        title: "Atlantic Ocean / आन्ध्र महासागर",
+                        content: `<div class="space-y-4">
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-center">
+                                <div class="bg-blue-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">106.5M km²</p>
+                                    <p class="text-sm">Area</p>
+                                </div>
+                                <div class="bg-green-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">23%</p>
+                                    <p class="text-sm">Earth's Water</p>
+                                </div>
+                                <div class="bg-red-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">8,376m</p>
+                                    <p class="text-sm">Max Depth</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white border-l-4 border-blue-500 pl-4 py-2">
+                                <p class="font-semibold">Nickname / उपनाम</p>
+                                <p>"Ocean of Commerce" or "Herring Pond"</p>
+                                <p class="nepali">"व्यापारको महासागर" वा "हेरिङ्ग ताल"</p>
+                            </div>
+                            
+                            <div>
+                                <p class="font-semibold mb-2">Deepest Point / गहिरो बिन्दु</p>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <p class="font-medium">Puerto Rico Trench</p>
+                                    <p>Depth: 8,376 meters (27,480 feet)</p>
+                                    <p class="nepali text-sm">गहिराइ: ८,३७६ मिटर (२७,४८० फिट)</p>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <p class="font-semibold mb-2">Major Features / प्रमुख विशेषताहरू</p>
+                                <div class="space-y-3">
+                                    <div class="flex items-start">
+                                        <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 mt-1 flex-shrink-0">🔄</span>
+                                        <div>
+                                            <p class="font-medium">Mid-Atlantic Ridge</p>
+                                            <p>Longest mountain range on Earth (16,000 km)</p>
+                                            <p class="nepali text-sm">पृथ्वीको सबैभन्दा लामो पर्वत श्रृंखला (१६,००० कि.मि.)</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 mt-1 flex-shrink-0">🚢</span>
+                                        <div>
+                                            <p class="font-medium">Busiest Shipping Routes</p>
+                                            <p>Connects Americas, Europe, and Africa</p>
+                                            <p class="nepali text-sm">अमेरिका, युरोप र अफ्रिका जोड्ने</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 mt-1 flex-shrink-0">🌊</span>
+                                        <div>
+                                            <p class="font-medium">Gulf Stream</p>
+                                            <p>Warm ocean current affecting European climate</p>
+                                            <p class="nepali text-sm">युरोपेली मौसम प्रभावित गर्ने गर्मी समुद्री प्रवाह</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`
+                    },
+                    // Additional ocean sections would continue here...
+                ]
+            },
+
+            // Rivers Data
+            rivers: {
+                title: "Major Rivers of the World / विश्वका प्रमुख नदीहरू",
+                sections: [
+                    {
+                        id: "river1",
+                        title: "Nile River / नाइल नदी",
+                        content: `<div class="space-y-4">
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                                <div class="bg-blue-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">6,650 km</p>
+                                    <p class="text-sm">Length</p>
+                                </div>
+                                <div class="bg-green-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">11</p>
+                                    <p class="text-sm">Countries</p>
+                                </div>
+                                <div class="bg-yellow-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">3.4M km²</p>
+                                    <p class="text-sm">Basin Area</p>
+                                </div>
+                                <div class="bg-red-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">1</p>
+                                    <p class="text-sm">Rank</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white border-l-4 border-blue-500 pl-4 py-2">
+                                <p class="font-semibold">Historical Significance / ऐतिहासिक महत्त्व</p>
+                                <p>"Gift of the Nile" - Foundation of Egyptian civilization</p>
+                                <p class="nepali">"नाइलको उपहार" - इजिप्टी सभ्यताको आधार</p>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <p class="font-semibold mb-2">Source / उद्गम</p>
+                                    <div class="bg-gray-50 p-3 rounded">
+                                        <p>Lake Victoria (Uganda/Tanzania/Kenya)</p>
+                                        <p class="nepali text-sm">भिक्टोरिया ताल (युगाण्डा/तान्जानिया/केन्या)</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="font-semibold mb-2">Mouth / मुहान</p>
+                                    <div class="bg-gray-50 p-3 rounded">
+                                        <p>Mediterranean Sea (Egypt)</p>
+                                        <p class="nepali text-sm">भूमध्य सागर (इजिप्ट)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`
+                    },
+                    {
+                        id: "river2",
+                        title: "Amazon River / अमेजन नदी",
+                        content: `<div class="space-y-4">
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                                <div class="bg-blue-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">6,400 km</p>
+                                    <p class="text-sm">Length</p>
+                                </div>
+                                <div class="bg-green-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">7</p>
+                                    <p class="text-sm">Countries</p>
+                                </div>
+                                <div class="bg-yellow-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">7M km²</p>
+                                    <p class="text-sm">Basin Area</p>
+                                </div>
+                                <div class="bg-red-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">1</p>
+                                    <p class="text-sm">Discharge</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white border-l-4 border-green-500 pl-4 py-2">
+                                <p class="font-semibold">World Record / विश्व रेकर्ड</p>
+                                <p>Largest river by discharge volume (209,000 m³/s)</p>
+                                <p class="nepali">जलराशीका आधारमा विश्वकै ठूलो नदी (२,०९,००० मि³/से.)</p>
+                            </div>
+                        </div>`
+                    }
+                ]
+            },
+
+            // Mountains Data
+            mountains: {
+                title: "Major Mountain Ranges & Peaks / प्रमुख पर्वत श्रृंखला र शिखरहरू",
+                sections: [
+                    {
+                        id: "mt1",
+                        title: "Himalayas / हिमालय",
+                        content: `<div class="space-y-4">
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-center">
+                                <div class="bg-blue-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">2,400 km</p>
+                                    <p class="text-sm">Length</p>
+                                </div>
+                                <div class="bg-green-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">5</p>
+                                    <p class="text-sm">Countries</p>
+                                </div>
+                                <div class="bg-red-50 p-3 rounded">
+                                    <p class="text-2xl font-bold">14</p>
+                                    <p class="text-sm">8,000m+ Peaks</p>
+                                </div>
+                            </div>
+                        </div>`
+                    }
+                ]
+            },
+
+            // Countries Data
+            countries: {
+                title: "Countries Information / देशहरूको जानकारी",
+                sections: [
+                    {
+                        id: "country1",
+                        title: "Top 10 Largest Countries by Area / क्षेत्रफलका आधारमा शीर्ष १० देशहरू",
+                        content: `<div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead class="bg-gray-100">
+                                    <tr>
+                                        <th class="p-3 text-left">Rank</th>
+                                        <th class="p-3 text-left">Country</th>
+                                        <th class="p-3 text-left">Area (km²)</th>
+                                        <th class="p-3 text-left">Continent</th>
+                                        <th class="p-3 text-left">Capital</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b hover:bg-gray-50">
+                                        <td class="p-3 font-bold">1</td>
+                                        <td class="p-3">🇷🇺 Russia</td>
+                                        <td class="p-3">17,098,246</td>
+                                        <td class="p-3">Europe/Asia</td>
+                                        <td class="p-3">Moscow</td>
+                                    </tr>
+                                    <tr class="border-b hover:bg-gray-50">
+                                        <td class="p-3 font-bold">2</td>
+                                        <td class="p-3">🇨🇦 Canada</td>
+                                        <td class="p-3">9,984,670</td>
+                                        <td class="p-3">North America</td>
+                                        <td class="p-3">Ottawa</td>
+                                    </tr>
+                                    <tr class="border-b hover:bg-gray-50">
+                                        <td class="p-3 font-bold">3</td>
+                                        <td class="p-3">🇺🇸 USA</td>
+                                        <td class="p-3">9,833,517</td>
+                                        <td class="p-3">North America</td>
+                                        <td class="p-3">Washington D.C.</td>
+                                    </tr>
+                                    <tr class="border-b hover:bg-gray-50">
+                                        <td class="p-3 font-bold">4</td>
+                                        <td class="p-3">🇨🇳 China</td>
+                                        <td class="p-3">9,596,961</td>
+                                        <td class="p-3">Asia</td>
+                                        <td class="p-3">Beijing</td>
+                                    </tr>
+                                    <tr class="border-b hover:bg-gray-50">
+                                        <td class="p-3 font-bold">5</td>
+                                        <td class="p-3">🇧🇷 Brazil</td>
+                                        <td class="p-3">8,515,767</td>
+                                        <td class="p-3">South America</td>
+                                        <td class="p-3">Brasília</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>`
+                    }
+                ]
+            },
+
+            // World Facts
+            facts: {
+                title: "World Records & Facts / विश्व रेकर्ड र तथ्यहरू",
+                sections: [
+                    {
+                        id: "fact1",
+                        title: "Geographical Extremes / भौगोलिक चरम सीमाहरू",
+                        content: `<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-4">
+                                <div class="bg-white p-4 rounded-lg shadow border">
+                                    <p class="font-semibold text-lg mb-2">🌡️ Hottest Place</p>
+                                    <p>Death Valley, USA</p>
+                                    <p class="text-sm text-gray-600">Record: 56.7°C (134.1°F)</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg shadow border">
+                                    <p class="font-semibold text-lg mb-2">🥶 Coldest Place</p>
+                                    <p>Vostok Station, Antarctica</p>
+                                    <p class="text-sm text-gray-600">Record: -89.2°C (-128.6°F)</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg shadow border">
+                                    <p class="font-semibold text-lg mb-2">🌧️ Wettest Place</p>
+                                    <p>Mawsynram, India</p>
+                                    <p class="text-sm text-gray-600">Avg: 11,871 mm rainfall/year</p>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-white p-4 rounded-lg shadow border">
+                                    <p class="font-semibold text-lg mb-2">🏔️ Highest Point</p>
+                                    <p>Mount Everest, Nepal/China</p>
+                                    <p class="text-sm text-gray-600">8,848.86 m (29,031.7 ft)</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg shadow border">
+                                    <p class="font-semibold text-lg mb-2">⚰️ Lowest Point (Land)</p>
+                                    <p>Dead Sea, Israel/Jordan</p>
+                                    <p class="text-sm text-gray-600">-430.5 m (-1,412 ft) below sea level</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg shadow border">
+                                    <p class="font-semibold text-lg mb-2">🌊 Deepest Point (Ocean)</p>
+                                    <p>Challenger Deep, Mariana Trench</p>
+                                    <p class="text-sm text-gray-600">10,994 m (36,070 ft) deep</p>
+                                </div>
+                            </div>
+                        </div>`
+                    }
+                ]
+            }
+        };
+
+        // Application State
+        let currentTab = 'continents';
+        let readSections = JSON.parse(localStorage.getItem('readSections')) || {};
+        let searchTerm = '';
+
+        // Initialize Application
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeTabs();
+            loadTabContent('continents');
+            updateProgress();
+            setupEventListeners();
+        });
+
+        // Tab Navigation
+        function initializeTabs() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tab = this.getAttribute('data-tab');
+                    
+                    // Update active tab style
+                    tabButtons.forEach(btn => btn.classList.remove('tab-active'));
+                    this.classList.add('tab-active');
+                    
+                    // Load content
+                    currentTab = tab;
+                    loadTabContent(tab);
+                });
+            });
+            
+            // Set first tab as active
+            document.querySelector(`[data-tab="${currentTab}"]`).classList.add('tab-active');
+        }
+
+        // Load Content for Selected Tab
+        function loadTabContent(tab) {
+            const contentArea = document.getElementById('contentArea');
+            const tabData = geographyData[tab];
+            
+            if (!tabData) {
+                contentArea.innerHTML = '<div class="text-center py-12"><p class="text-gray-500">Content coming soon...</p></div>';
+                return;
+            }
+            
+            let html = `
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold text-gray-800">${tabData.title}</h2>
+                    <p class="text-gray-600 mt-1">Click on sections to mark as read. Use search to find specific information.</p>
+                </div>
+            `;
+            
+            tabData.sections.forEach(section => {
+                const isRead = readSections[section.id] || false;
+                
+                html += `
+                    <div id="section-${section.id}" class="bg-white rounded-xl shadow-md card-hover overflow-hidden ${isRead ? 'read' : ''}">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-3">${section.title}</h3>
+                                <button class="mark-read-btn ${isRead ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'} px-3 py-1 rounded-lg text-sm font-medium transition-colors" data-section="${section.id}">
+                                    ${isRead ? '✓ Read' : 'Mark Read'}
+                                </button>
+                            </div>
+                            <div class="section-content">
+                                ${section.content}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            contentArea.innerHTML = html;
+            
+            // Update total sections count
+            document.getElementById('totalSections').textContent = tabData.sections.length;
+            
+            // Add event listeners to new mark-read buttons
+            document.querySelectorAll('.mark-read-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const sectionId = this.getAttribute('data-section');
+                    toggleReadStatus(sectionId);
+                });
+            });
+            
+            // Apply search highlighting if there's a search term
+            if (searchTerm) {
+                highlightSearchTerms();
+            }
+        }
+
+        // Toggle Read Status
+        function toggleReadStatus(sectionId) {
+            const sectionElement = document.getElementById(`section-${sectionId}`);
+            const button = document.querySelector(`[data-section="${sectionId}"]`);
+            
+            if (readSections[sectionId]) {
+                // Mark as unread
+                delete readSections[sectionId];
+                sectionElement.classList.remove('read');
+                button.classList.remove('bg-green-100', 'text-green-800');
+                button.classList.add('bg-gray-100', 'text-gray-800');
+                button.textContent = 'Mark Read';
+            } else {
+                // Mark as read
+                readSections[sectionId] = true;
+                sectionElement.classList.add('read');
+                button.classList.remove('bg-gray-100', 'text-gray-800');
+                button.classList.add('bg-green-100', 'text-green-800');
+                button.textContent = '✓ Read';
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('readSections', JSON.stringify(readSections));
+            
+            // Update progress
+            updateProgress();
+        }
+
+        // Update Progress Bar
+        function updateProgress() {
+            const totalSections = Object.keys(geographyData).reduce((total, tab) => {
+                return total + (geographyData[tab].sections ? geographyData[tab].sections.length : 0);
+            }, 0);
+            
+            const readCount = Object.keys(readSections).length;
+            const percentage = totalSections > 0 ? Math.round((readCount / totalSections) * 100) : 0;
+            
+            document.getElementById('progressBar').style.width = `${percentage}%`;
+            document.getElementById('progressPercentage').textContent = `${percentage}%`;
+            document.getElementById('readCount').textContent = readCount;
+            document.getElementById('totalSections').textContent = totalSections;
+        }
+
+        // Search Functionality
+        function setupEventListeners() {
+            // Search input
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', function() {
+                searchTerm = this.value.toLowerCase().trim();
+                if (searchTerm.length >= 2) {
+                    performSearch();
+                } else if (searchTerm.length === 0) {
+                    clearSearchHighlight();
+                }
+            });
+            
+            // Mark all as read
+            document.getElementById('markAllRead').addEventListener('click', function() {
+                if (confirm('Mark all sections as read?')) {
+                    Object.keys(geographyData).forEach(tab => {
+                        if (geographyData[tab].sections) {
+                            geographyData[tab].sections.forEach(section => {
+                                readSections[section.id] = true;
+                            });
+                        }
+                    });
+                    
+                    localStorage.setItem('readSections', JSON.stringify(readSections));
+                    loadTabContent(currentTab);
+                    updateProgress();
+                }
+            });
+            
+            // Reset progress
+            document.getElementById('resetProgress').addEventListener('click', function() {
+                if (confirm('Reset all progress?')) {
+                    readSections = {};
+                    localStorage.removeItem('readSections');
+                    loadTabContent(currentTab);
+                    updateProgress();
+                }
+            });
+        }
+
+        // Perform Search
+        function performSearch() {
+            const contentArea = document.getElementById('contentArea');
+            const sections = contentArea.querySelectorAll('.section-content');
+            let foundMatch = false;
+            
+            sections.forEach(section => {
+                const text = section.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    // Show this section's parent
+                    section.closest('.bg-white').style.display = 'block';
+                    foundMatch = true;
+                } else {
+                    // Hide this section
+                    section.closest('.bg-white').style.display = 'none';
+                }
+            });
+            
+            // Highlight search terms
+            highlightSearchTerms();
+            
+            // Show message if no results
+            if (!foundMatch) {
+                contentArea.innerHTML += `
+                    <div class="text-center py-12">
+                        <p class="text-gray-500">No results found for "${searchTerm}"</p>
+                        <button id="clearSearch" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg">Clear Search</button>
+                    </div>
+                `;
+                
+                document.getElementById('clearSearch').addEventListener('click', function() {
+                    searchInput.value = '';
+                    searchTerm = '';
+                    loadTabContent(currentTab);
+                });
+            }
+        }
+
+        // Highlight Search Terms
+        function highlightSearchTerms() {
+            const sections = document.querySelectorAll('.section-content');
+            
+            sections.forEach(section => {
+                const html = section.innerHTML;
+                const regex = new RegExp(`(${searchTerm})`, 'gi');
+                const highlighted = html.replace(regex, '<span class="search-highlight">$1</span>');
+                section.innerHTML = highlighted;
+            });
+        }
+
+        // Clear Search Highlight
+        function clearSearchHighlight() {
+            const highlights = document.querySelectorAll('.search-highlight');
+            highlights.forEach(highlight => {
+                const parent = highlight.parentNode;
+                parent.replaceChild(document.createTextNode(highlight.textContent), highlight);
+                parent.normalize();
+            });
+        }
+
+        // Keyboard Shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Ctrl/Cmd + F for search
+            if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
+                e.preventDefault();
+                document.getElementById('searchInput').focus();
+            }
+            
+            // Escape to clear search
+            if (e.key === 'Escape' && searchTerm) {
+                searchInput.value = '';
+                searchTerm = '';
+                loadTabContent(currentTab);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>महत्वपूर्ण व्यक्तित्व र विचारहरू - एक संग्रहालय</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Book Cover -->
+        <header class="book-cover">
+            <div class="cover-content">
+                <h1 class="cover-title">महत्वपूर्ण व्यक्तित्व र विचारहरू</h1>
+                <div class="cover-subtitle">एक संग्रहालय</div>
+                <div class="cover-line"></div>
+                <p class="cover-description">शताब्दीहरूदेखि मानवताको मार्गदर्शन गर्ने व्यक्तित्वहरूको ज्ञानको भण्डार</p>
+                <div class="cover-decoration">✻</div>
+            </div>
+        </header>
+
+        <!-- Table of Contents -->
+        <nav class="table-of-contents" id="toc">
+            <div class="toc-header">
+                <h2><i class="fas fa-bookmark"></i> सामग्रीसूची</h2>
+                <button class="close-toc" id="closeToc">&times;</button>
+            </div>
+            <ul class="toc-list" id="tocList">
+                <!-- Dynamic content from app.js -->
+            </ul>
+            <div class="toc-footer">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="व्यक्तित्व खोज्नुहोस्...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="book-content" id="mainContent">
+            <!-- Dynamic content from app.js -->
+        </main>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <button class="nav-btn" id="tocToggle">
+                <i class="fas fa-list"></i>
+                <span>सूची</span>
+            </button>
+            <button class="nav-btn" id="prevBtn">
+                <i class="fas fa-chevron-left"></i>
+                <span>अघिल्लो</span>
+            </button>
+            <div class="page-indicator" id="pageIndicator">
+                <span id="currentSection">१</span> / <span id="totalSections">१८</span>
+            </div>
+            <button class="nav-btn" id="nextBtn">
+                <span>अर्को</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <button class="nav-btn" id="themeToggle">
+                <i class="fas fa-moon"></i>
+                <span>रंग</span>
+            </button>
+        </div>
+
+        <!-- Loading Screen -->
+        <div class="loading-screen" id="loadingScreen">
+            <div class="loading-content">
+                <div class="book-spinner">
+                    <div class="book-page"></div>
+                    <div class="book-page"></div>
+                    <div class="book-page"></div>
+                </div>
+                <p>ज्ञानको भण्डार खोलिँदै...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="units.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

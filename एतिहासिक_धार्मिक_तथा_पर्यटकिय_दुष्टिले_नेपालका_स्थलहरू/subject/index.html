@@ -1,0 +1,73 @@
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <link rel="stylesheet" href="style.css">
+            <div class="header-content">
+                <h1><i class="fas fa-landmark"></i> नेपालका सांस्कृतिक स्थलहरू</h1>
+                <p class="subtitle">ऐतिहासिक, धार्मिक र पर्यटकीय महत्त्वका स्थलहरू</p>
+            </div>
+            
+        </header>
+
+        <main class="content-area">
+            <section id="unit-selection" class="unit-selection active">
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="स्थलको नाम खोज्नुहोस्...">
+                    </div>
+                    <div class="filter-options">
+                        <button class="filter-btn active" data-filter="all">सबै</button>
+                        <button class="filter-btn" data-filter="धार्मिक">धार्मिक</button>
+                        <button class="filter-btn" data-filter="ऐतिहासिक">ऐतिहासिक</button>
+                        <button class="filter-btn" data-filter="पर्यटकीय">पर्यटकीय</button>
+                    </div>
+
+
+                    <!-- <div class="filter-container">
+    
+</div> -->
+
+
+
+                </div>
+                <div class="units-grid" id="unitsContainer"></div>
+            </section>
+
+            <section id="unit-detail" class="unit-detail">
+                <div class="detail-header">
+                    <button id="backButton" class="back-btn">
+                        <i class="fas fa-arrow-left"></i> पछि फर्कनुहोस्
+                    </button>
+                    <h2 id="unitTitle"></h2>
+                    <div class="unit-meta">
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> <span id="unitLocation"></span></span>
+                        <span class="category" id="unitCategory"></span>
+                        <span class="feature-tag" id="unitAltitudeTag"><i class="fas fa-mountain"></i> <span id="unitAltitude"></span></span>
+                        <span class="feature-tag" id="unitCoordsTag"><i class="fas fa-compass"></i> <span id="unitCoords"></span></span>
+                    </div>
+                </div>
+
+                <div class="detail-content" id="unitContent">
+                    </div>
+
+                <div class="detail-footer">
+                    <div class="fact-check-badge">
+                        <i class="fas fa-check-circle"></i>
+                        <span>२०२५ संस्करण LogPlus</span>
+                    </div>
+                    <button class="share-btn"><i class="fas fa-share-alt"></i> सेयर</button>
+                </div>
+            </section>
+        </main>
+
+        
+
+        <div class="loading-spinner" id="loadingSpinner">
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <script src="unites.js"></script>
+    <script src="app.js"></script>
+</body>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>सामाजिक अध्ययन - एकीकृत ज्ञानकोश</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <i class="fas fa-book-open logo-icon"></i>
+                    <h1 class="app-title">सामाजिक अध्ययन</h1>
+                    <span class="app-subtitle">एकीकृत ज्ञानकोश</span>
+                </div>
+                <div class="theme-toggle">
+                    <i class="fas fa-sun" id="theme-icon"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Search and Filter Section -->
+        <div class="search-section">
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" placeholder="विषय वा शब्द खोज्नुहोस्...">
+                <button id="clearSearch" class="clear-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="filter-section">
+                <div class="unit-selector">
+                    <label for="unitSelect"><i class="fas fa-filter"></i> इकाई छनौट:</label>
+                    <select id="unitSelect">
+                        <option value="all">सबै इकाईहरू</option>
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+                <div class="stats">
+                    <span id="totalUnits">९ इकाईहरू</span>
+                    <span id="totalCards">० कार्डहरू</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="units-container" id="unitsContainer">
+                <!-- Units will be dynamically loaded here -->
+            </div>
+            
+            <div class="no-results" id="noResults">
+                <i class="fas fa-search fa-2x"></i>
+                <h3>कुनै परिणाम फेला परेन</h3>
+                <p>तपाईंले खोजेको विषय कुनै इकाइमा छैन। कृपया अर्को शब्द प्रयोग गर्नुहोस् वा सबै इकाईहरू हेर्नुहोस्।</p>
+            </div>
+        </main>
+
+        <!-- Navigation Footer -->
+        <footer class="app-footer">
+            <div class="nav-buttons">
+                <button id="prevUnit" class="nav-btn" disabled>
+                    <i class="fas fa-chevron-left"></i> अघिल्लो
+                </button>
+                <div class="page-info">
+                    <span id="currentUnitDisplay">इकाई १</span>
+                </div>
+                <button id="nextUnit" class="nav-btn">
+                    अर्को <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="footer-info">
+                <p><i class="fas fa-info-circle"></i> स्रोत: सशस्त्र प्रहरी सहायक निरीक्षक परीक्षा दिग्दर्शन</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="units.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

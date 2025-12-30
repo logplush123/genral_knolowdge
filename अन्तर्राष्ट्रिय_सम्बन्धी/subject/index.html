@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>भूगोल ज्ञान - Geography Learning App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌍</text></svg>">
+</head>
+<body>
+    <!-- Header -->
+    <header class="app-header">
+        <div class="header-content">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h1 class="app-title">🌍 भूगोल ज्ञान</h1>
+            <div class="header-actions">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="शीर्षक खोज्नुहोस्...">
+                    <button id="searchButton"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>विषयवस्तु</h2>
+                <button class="close-sidebar" id="closeSidebar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="sidebar-content">
+                <div class="unit-list" id="unitList">
+                    <!-- Units will be dynamically generated -->
+                </div>
+            </div>
+            <div class="sidebar-footer">
+                <div class="app-info">
+                    <p>© 2025 भूगोल ज्ञान</p>
+                    <p class="info-text">सबै जानकारी २०२५ को मानक अनुसार</p>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="content-header">
+                <h2 id="currentUnitTitle">भूगोल परिचय</h2>
+                <div class="breadcrumb" id="breadcrumb">
+                    <span>मुख्य पृष्ठ</span> / <span>भूगोल</span>
+                </div>
+            </div>
+
+            <!-- Content Cards Container -->
+            <div class="cards-container" id="cardsContainer">
+                <!-- Cards will be dynamically generated -->
+            </div>
+
+            <!-- No Results Message -->
+            <div class="no-results" id="noResults" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>कुनै परिणाम फेला परेन</h3>
+                <p>तपाईंको खोजीशब्दसँग मेल खाने शीर्षक फेला परेन।</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile Navigation Tabs -->
+    <nav class="mobile-tabs">
+        <button class="tab-btn active" data-unit="introduction">
+            <i class="fas fa-home"></i>
+            <span>परिचय</span>
+        </button>
+        <button class="tab-btn" data-unit="continents">
+            <i class="fas fa-globe-asia"></i>
+            <span>महादेश</span>
+        </button>
+        <button class="tab-btn" data-unit="oceans">
+            <i class="fas fa-water"></i>
+            <span>महासागर</span>
+        </button>
+        <button class="tab-btn" data-unit="rivers">
+            <i class="fas fa-river"></i>
+            <span>नदीहरू</span>
+        </button>
+        <button class="tab-btn" data-unit="mountains">
+            <i class="fas fa-mountain"></i>
+            <span>पर्वत</span>
+        </button>
+    </nav>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>

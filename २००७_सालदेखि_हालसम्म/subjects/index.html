@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>नेपालको इतिहास र राजनीति - सामान्य ज्ञान</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1><i class="fas fa-landmark"></i> नेपालको इतिहास</h1>
+                <p class="subtitle">२००७ सालदेखि हालसम्म</p>
+            </div>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="खोज्नुहोस्...">
+                <button class="clear-search" id="clearSearch">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <div class="nav-container">
+                <button class="nav-btn active" data-section="2007-revolution">
+                    <i class="fas fa-flag"></i>
+                    <span>२००७ क्रान्ति</span>
+                </button>
+                <button class="nav-btn" data-section="elections">
+                    <i class="fas fa-vote-yea"></i>
+                    <span>निर्वाचन</span>
+                </button>
+                <button class="nav-btn" data-section="timeline">
+                    <i class="fas fa-timeline"></i>
+                    <span>समयरेखा</span>
+                </button>
+                <button class="nav-btn" data-section="parties">
+                    <i class="fas fa-users"></i>
+                    <span>राजनीतिक दल</span>
+                </button>
+                <button class="nav-btn" data-section="more">
+                    <i class="fas fa-ellipsis-h"></i>
+                    <span>थप</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="content-area">
+            <!-- 2007 Revolution Section -->
+            <section id="2007-revolution" class="content-section active">
+                <div class="section-header">
+                    <h2><i class="fas fa-star-of-life"></i> २००७ सालको क्रान्ति</h2>
+                    <p class="section-subtitle">नेपालमा प्रजातन्त्रको स्थापना</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-calendar-day"></i> मुख्य घटनाहरू</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="timeline-item">
+                            <div class="timeline-date">२००७ कार्तिक २१</div>
+                            <div class="timeline-content">
+                                <strong>राजा त्रिभुवन शरणमा</strong>
+                                <p>राजा त्रिभुवन परिवारका सदस्यहरू (नाती ज्ञानेन्द्र बाहेक) श्री ३ मोहन शमशेरको स्वीकृति लिई भारतीय राजदुतावासमा शरण लिए।</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-date">२००७ कार्तिक २५</div>
+                            <div class="timeline-content">
+                                <strong>राजा त्रिभुवन भारत प्रस्थान</strong>
+                                <p>राजा त्रिभुवन सपरिवार भारत प्रस्थान गरे। यसको साथै नेपाली काङ्ग्रेसको नेतृत्वमा सशस्त्र आन्दोलन प्रारम्भ भयो।</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-date">२००७ कार्तिक २२</div>
+                            <div class="timeline-content">
+                                <strong>ज्ञानेन्द्र राजा घोषित</strong>
+                                <p>राजा त्रिभुवनलाई दरबारमा फर्काउन असफल भएपछि श्री ३ मोहन शमशेरले ज्ञानेन्द्रलाई नेपालका राजा घोषणा गरे।</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-date">२००७ फागुन ७</div>
+                            <div class="timeline-content">
+                                <strong>राणा शासनको अन्त्य</strong>
+                                <p>नेपालमा राणा शासनको अन्त्य भई प्रजातन्त्र प्राप्ति भएको र अन्तरिम सरकारको घोषणा।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-handshake"></i> दिल्ली सम्झौता</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>तत्कालीन भारतीय प्रधानमन्त्री जवाहरलाल नेहरुको मध्यस्थतामा राजा, काङ्ग्रेस र राणाहरूका बीचमा त्रिपक्षीय सम्झौता भएको।</p>
+                        <ul class="content-list">
+                            <li><i class="fas fa-check-circle"></i> नयाँ संविधान तयार गराउन संविधान सभाको चुनाव</li>
+                            <li><i class="fas fa-check-circle"></i> राणा र नेपाली काङ्ग्रेसको प्रतिनिधिहरू रहेको अन्तरिम सरकार गठन</li>
+                            <li><i class="fas fa-check-circle"></i> नेपालका राजा श्री ५ त्रिभुवनलाई स्वीकार</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-users-cog"></i> प्रथम अन्तरिम मन्त्रिमण्डल (२००७)</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>नाम</th>
+                                        <th>पद</th>
+                                        <th>तर्फ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>श्री ३ मोहन शमशेर जबरा</td>
+                                        <td>प्रधानमन्त्री र परराष्ट्र मन्त्री</td>
+                                        <td class="rana">राणा</td>
+                                    </tr>
+                                    <tr>
+                                        <td>श्री बबर शमशेर जबरा</td>
+                                        <td>रक्षा मन्त्री</td>
+                                        <td class="rana">राणा</td>
+                                    </tr>
+                                    <tr>
+                                        <td>श्री विश्वेश्वरप्रसाद कोइराला</td>
+                                        <td>गृह मन्त्री</td>
+                                        <td class="congress">काङ्ग्रेस</td>
+                                    </tr>
+                                    <tr>
+                                        <td>श्री सुवर्ण शमशेर जबरा</td>
+                                        <td>अर्थ मन्त्री</td>
+                                        <td class="congress">काङ्ग्रेस</td>
+                                    </tr>
+                                    <tr>
+                                        <td>श्री चूडाराज शमशेर जबरा</td>
+                                        <td>वन विभाग मन्त्री</td>
+                                        <td class="rana">राणा</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <button class="show-more-btn" data-target="first-cabinet">
+                            <i class="fas fa-chevron-down"></i> पूर्ण सूची हेर्नुहोस्
+                        </button>
+                        <div id="first-cabinet" class="more-content hidden">
+                            <table class="data-table">
+                                <tbody>
+                                    <tr>
+                                        <td>श्री गणेशमान सिंह</td>
+                                        <td>उद्योग वाणिज्य मन्त्री</td>
+                                        <td class="congress">काङ्ग्रेस</td>
+                                    </tr>
+                                    <tr>
+                                        <td>श्री नृपजङ राणा</td>
+                                        <td>शिक्षा मन्त्री</td>
+                                        <td class="rana">राणा</td>
+                                    </tr>
+                                    <tr>
+                                        <td>श्री भद्रकाली मिश्र</td>
+                                        <td>यातायात मन्त्री</td>
+                                        <td class="congress">काङ्ग्रेस</td>
+                                    </tr>
+                                    <tr>
+                                        <td>श्री यज्ञबहादुर बस्नेत</td>
+                                        <td>स्वास्थ्य, स्वायत्त शासन मन्त्री</td>
+                                        <td class="rana">राणा</td>
+                                    </tr>
+                                    <tr>
+                                        <td>श्री भरतमणि शर्मा</td>
+                                        <td>खाद्य र कृषि मन्त्री</td>
+                                        <td class="congress">काङ्ग्रेस</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Elections Section -->
+            <section id="elections" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-vote-yea"></i> नेपालमा निर्वाचन</h2>
+                    <p class="section-subtitle">आम निर्वाचनहरूको विवरण</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-award"></i> प्रथम आम निर्वाचन (२०१५)</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <div class="stat-value">४२.१६%</div>
+                                <div class="stat-label">मतदान</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">१०९</div>
+                                <div class="stat-label">निर्वाचन क्षेत्र</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">७८६</div>
+                                <div class="stat-label">उम्मेदवार</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">७४</div>
+                                <div class="stat-label">ने.का. सिट</div>
+                            </div>
+                        </div>
+                        
+                        <div class="highlight-box">
+                            <h4><i class="fas fa-star"></i> महत्वपूर्ण तथ्यहरू:</h4>
+                            <ul class="content-list">
+                                <li><i class="fas fa-user-check"></i> नेपाली काङ्ग्रेसले ७४ सिट (६७.८८%) जितेर बहुमत प्राप्त</li>
+                                <li><i class="fas fa-user-check"></i> एक मात्र निर्वाचित महिला: द्वारिका देवी ठकुरानी (डडेलधुरा)</li>
+                                <li><i class="fas fa-user-check"></i> सबैभन्दा पहिले नतिजा: गुल्मी जिल्ला</li>
+                                <li><i class="fas fa-user-check"></i> सबैभन्दा पछि नतिजा: बाग्लुङ जिल्ला</li>
+                                <li><i class="fas fa-user-check"></i> विश्वेश्वरप्रसाद कोइराला प्रथम निर्वाचित प्रधानमन्त्री</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-chart-bar"></i> आम निर्वाचनहरूको तुलना</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-container">
+                            <table class="comparison-table">
+                                <thead>
+                                    <tr>
+                                        <th>विवरण</th>
+                                        <th>२०१५</th>
+                                        <th>२०४८</th>
+                                        <th>२०५१</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>निर्वाचन क्षेत्र</td>
+                                        <td>१०९</td>
+                                        <td>२०५</td>
+                                        <td>२०५</td>
+                                    </tr>
+                                    <tr>
+                                        <td>भाग लिएका पार्टी</td>
+                                        <td>९</td>
+                                        <td>२०</td>
+                                        <td>२४</td>
+                                    </tr>
+                                    <tr>
+                                        <td>कुल मतदाता</td>
+                                        <td>४२,४६,४६८</td>
+                                        <td>१,२२,९६,२१९</td>
+                                        <td>१,२२,९६,२१९</td>
+                                    </tr>
+                                    <tr>
+                                        <td>मतदान %</td>
+                                        <td>४२.१६%</td>
+                                        <td>६५.१५%</td>
+                                        <td>६१.८३%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>विजयी पार्टी</td>
+                                        <td>ने.का. (७४)</td>
+                                        <td>ने.का. (११०)</td>
+                                        <td>एमाले (८८)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>मतदान उमेर</td>
+                                        <td>२१ वर्ष</td>
+                                        <td>१८ वर्ष</td>
+                                        <td>१८ वर्ष</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-map-marked-alt"></i> निर्वाचन क्षेत्र विवरण (२०७४)</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="info-box">
+                            <h4><i class="fas fa-info-circle"></i> क्षेत्र निर्धारण आयोग</h4>
+                            <p>पूर्वन्यायाधीश कमलनारायण दासको नेतृत्वमा गठित आयोगले जनसंख्यालाई ९०% र भूगोललाई १०% भार मानेर क्षेत्र निर्धारण गरेको।</p>
+                        </div>
+                        
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>प्रदेश</th>
+                                        <th>प्रतिनिधिसभा</th>
+                                        <th>प्रदेशसभा</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>प्रदेश १</td>
+                                        <td>२८</td>
+                                        <td>५६</td>
+                                    </tr>
+                                    <tr>
+                                        <td>प्रदेश २</td>
+                                        <td>३२</td>
+                                        <td>६४</td>
+                                    </tr>
+                                    <tr>
+                                        <td>बागमती</td>
+                                        <td>३३</td>
+                                        <td>६६</td>
+                                    </tr>
+                                    <tr>
+                                        <td>गण्डकी</td>
+                                        <td>१८</td>
+                                        <td>३६</td>
+                                    </tr>
+                                    <tr>
+                                        <td>लुम्बिनी</td>
+                                        <td>२६</td>
+                                        <td>५२</td>
+                                    </tr>
+                                    <tr>
+                                        <td>कर्णाली</td>
+                                        <td>१२</td>
+                                        <td>२४</td>
+                                    </tr>
+                                    <tr>
+                                        <td>सुदूरपश्चिम</td>
+                                        <td>१६</td>
+                                        <td>३२</td>
+                                    </tr>
+                                    <tr class="total-row">
+                                        <td><strong>जम्मा</strong></td>
+                                        <td><strong>१६५</strong></td>
+                                        <td><strong>३३०</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Timeline Section -->
+            <section id="timeline" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-timeline"></i> ऐतिहासिक समयरेखा</h2>
+                    <p class="section-subtitle">२००७ देखि हालसम्मका मुख्य घटनाहरू</p>
+                </div>
+                
+                <div class="timeline-container">
+                    <div class="timeline">
+                        <div class="timeline-event">
+                            <div class="timeline-date">२००७</div>
+                            <div class="timeline-content">
+                                <h4>२००७ सालको क्रान्ति</h4>
+                                <p>राणा शासनको अन्त्य, प्रजातन्त्रको स्थापना</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-event">
+                            <div class="timeline-date">२०१५</div>
+                            <div class="timeline-content">
+                                <h4>प्रथम आम निर्वाचन</h4>
+                                <p>वि.सं. २०१५ फागुन ७ देखि २०१६ वैशाखसम्म</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-event">
+                            <div class="timeline-date">२०१६</div>
+                            <div class="timeline-content">
+                                <h4>वी.पी. कोइराला प्रधानमन्त्री</h4>
+                                <p>प्रथम निर्वाचित प्रधानमन्त्रीको रूपमा शपथ</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-event">
+                            <div class="timeline-date">२०३७</div>
+                            <div class="timeline-content">
+                                <h4>जनमत संग्रह</h4>
+                                <p>पञ्चायत व्यवस्था वा बहुदलीय शासनको निर्णय</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-event">
+                            <div class="timeline-date">२०४६</div>
+                            <div class="timeline-content">
+                                <h4>जनआन्दोलन २०४६</h4>
+                                <p>बहुदलीय शासन प्रणालीको पुनःस्थापना</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-event">
+                            <div class="timeline-date">२०५८</div>
+                            <div class="timeline-content">
+                                <h4>राजदरबार हत्याकाण्ड</h4>
+                                <p>राजा वीरेन्द्र र शाही परिवारको निधन</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-event">
+                            <div class="timeline-date">२०६२/६३</div>
+                            <div class="timeline-content">
+                                <h4>जनआन्दोलन २</h4>
+                                <p>शाही शासन अन्त्य, लोकतन्त्र पुनःस्थापना</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-event">
+                            <div class="timeline-date">२०६३</div>
+                            <div class="timeline-content">
+                                <h4>शान्ति सम्झौता</h4>
+                                <p>सरकार र माओवादी बीच शान्ति सम्झौता</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-event">
+                            <div class="timeline-date">२०७२</div>
+                            <div class="timeline-content">
+                                <h4>नयाँ संविधान</h4>
+                                <p>नेपालको संविधान २०७२ जारी</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-event">
+                            <div class="timeline-date">२०७९</div>
+                            <div class="timeline-content">
+                                <h4>स्थानीय तह निर्वाचन</h4>
+                                <p>दोस्रो पटक स्थानीय तह निर्वाचन</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-user-friends"></i> राजा वीरेन्द्रको शासनकाल</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="content-list">
+                            <li><i class="fas fa-check"></i> ऐतिहासिक जनमत संग्रह (२०३७ वैशाख २०)</li>
+                            <li><i class="fas fa-check"></i> बहुदलीय शासन प्रणालीको घोषणा (२०४६ चैत्र २६)</li>
+                            <li><i class="fas fa-check"></i> "नेपाललाई शान्ति क्षेत्र घोषित गरियोस्" प्रस्ताव (२०३१)</li>
+                            <li><i class="fas fa-times"></i> २०५८ जेष्ठ १९ मा राजदरबार हत्याकाण्डमा निधन</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Political Parties Section -->
+            <section id="parties" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-users"></i> राजनीतिक संगठनहरू</h2>
+                    <p class="section-subtitle">प्रजातन्त्र स्थापनाभन्दा अघि खुलेका संगठन</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-history"></i> प्रारम्भिक राजनीतिक दलहरू</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>पार्टीको नाम</th>
+                                        <th>स्थापना</th>
+                                        <th>नेता</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>प्रजापरिषद्</td>
+                                        <td>१९९३ जेष्ठ २०</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>अखिल भारतीय नेपाली राष्ट्रिय काङ्ग्रेस</td>
+                                        <td>११ अक्टोबर १९४६</td>
+                                        <td>टङ्कप्रसाद आचार्य</td>
+                                    </tr>
+                                    <tr>
+                                        <td>नेपाली राष्ट्रिय काङ्ग्रेस</td>
+                                        <td>२५-२६ जनवरी १९४७</td>
+                                        <td>देवीप्रसाद सापकोटा</td>
+                                    </tr>
+                                    <tr>
+                                        <td>नेपाली काङ्ग्रेस</td>
+                                        <td>२००६ चैत्र</td>
+                                        <td>मातृकाप्रसाद कोइराला</td>
+                                    </tr>
+                                    <tr>
+                                        <td>नेपाल कम्युनिष्ट पार्टी</td>
+                                        <td>सन् १९४९ अप्रिल २२</td>
+                                        <td>पुष्पलाल श्रेष्ठ</td>
+                                    </tr>
+                                    <tr>
+                                        <td>गोरखा दल (खुकुरी दल)</td>
+                                        <td>२००७ मंसिर</td>
+                                        <td>भरत शमशेर</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-flag"></i> राष्ट्रिय मान्यता प्राप्त पार्टीहरू</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="party-grid">
+                            <div class="party-card">
+                                <div class="party-icon" style="background-color: #ff0000;">
+                                    <i class="fas fa-hammer"></i>
+                                </div>
+                                <div class="party-info">
+                                    <h4>नेकपा एमाले</h4>
+                                    <p>नेपाल कम्युनिष्ट पार्टी (एमाले)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="party-card">
+                                <div class="party-icon" style="background-color: #008000;">
+                                    <i class="fas fa-tree"></i>
+                                </div>
+                                <div class="party-info">
+                                    <h4>नेपाली काङ्ग्रेस</h4>
+                                    <p>सबैभन्दा पुरानो राजनीतिक दल</p>
+                                </div>
+                            </div>
+                            
+                            <div class="party-card">
+                                <div class="party-icon" style="background-color: #800080;">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="party-info">
+                                    <h4>माओवादी केन्द्र</h4>
+                                    <p>नेकपा (माओवादी केन्द्र)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="party-card">
+                                <div class="party-icon" style="background-color: #ffa500;">
+                                    <i class="fas fa-balance-scale"></i>
+                                </div>
+                                <div class="party-info">
+                                    <h4>राष्ट्रिय प्रजातन्त्र पार्टी</h4>
+                                    <p>राप्रपा (रोयलिस्ट)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="party-card">
+                                <div class="party-icon" style="background-color: #0000ff;">
+                                    <i class="fas fa-hand-peace"></i>
+                                </div>
+                                <div class="party-info">
+                                    <h4>राष्ट्रिय स्वतन्त्र पार्टी</h4>
+                                    <p>रास्वपा</p>
+                                </div>
+                            </div>
+                            
+                            <div class="party-card">
+                                <div class="party-icon" style="background-color: #ff69b4;">
+                                    <i class="fas fa-hands-helping"></i>
+                                </div>
+                                <div class="party-info">
+                                    <h4>जनता समाजवादी पार्टी</h4>
+                                    <p>जसपा</p>
+                                </div>
+                            </div>
+                            
+                            <div class="party-card">
+                                <div class="party-icon" style="background-color: #8b4513;">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div class="party-info">
+                                    <h4>जनमत पार्टी</h4>
+                                    <p>नयाँ राजनीतिक दल</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h4><i class="fas fa-info-circle"></i> राष्ट्रिय पार्टी हुनका लागि शर्त:</h4>
+                            <ul class="content-list">
+                                <li><i class="fas fa-percentage"></i> प्रतिनिधिसभाको समानुपातिक तर्फ ३% मत</li>
+                                <li><i class="fas fa-chair"></i> प्रत्यक्ष तर्फ कम्तिमा १ सिट</li>
+                                <li><i class="fas fa-certificate"></i> निर्वाचन आयोगबाट मान्यता</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- More Section -->
+            <section id="more" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-info-circle"></i> थप जानकारी</h2>
+                    <p class="section-subtitle">अन्य महत्वपूर्ण तथ्यहरू</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-user-tie"></i> वी.पी. कोइरालाको सरकारले गरेका कार्यहरू</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="achievements-grid">
+                            <div class="achievement-item">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-gavel"></i>
+                                </div>
+                                <div class="achievement-text">
+                                    <h4>बिर्ता उन्मूलन</h4>
+                                    <p>बिर्ता उन्मूलन ऐन २०१६ लागू गरी बिर्ताप्रथाको अन्त्य</p>
+                                </div>
+                            </div>
+                            
+                            <div class="achievement-item">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-landmark"></i>
+                                </div>
+                                <div class="achievement-text">
+                                    <h4>भूमिसम्बन्धी ऐन</h4>
+                                    <p>भूमिसम्बन्धी ऐन २०१६ लागू गरी जमिन्दारी प्रथाको अन्त्य</p>
+                                </div>
+                            </div>
+                            
+                            <div class="achievement-item">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-university"></i>
+                                </div>
+                                <div class="achievement-text">
+                                    <h4>त्रिभुवन विश्वविद्यालय</h4>
+                                    <p>देशको पहिलो विश्वविद्यालयको स्थापना</p>
+                                </div>
+                            </div>
+                            
+                            <div class="achievement-item">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-tree"></i>
+                                </div>
+                                <div class="achievement-text">
+                                    <h4>वन संरक्षण</h4>
+                                    <p>वन तथा वन्य पशुपंछीहरूको संरक्षणका लागि संरक्षित क्षेत्र निर्धारण</p>
+                                </div>
+                            </div>
+                            
+                            <div class="achievement-item">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-industry"></i>
+                                </div>
+                                <div class="achievement-text">
+                                    <h4>उद्योग स्थापना</h4>
+                                    <p>वीरगञ्ज चिनी कारखाना, जनकपुर चुरोट कारखाना स्थापना</p>
+                                </div>
+                            </div>
+                            
+                            <div class="achievement-item">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <div class="achievement-text">
+                                    <h4>दौत्य सम्बन्ध</h4>
+                                    <p>चीन, इजरायल, पाकिस्तान, इजिप्ट लगायत २४ राष्ट्रहरूसँग दौत्य सम्बन्ध</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-mountain"></i> नेपाल-चीन सम्बन्ध</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="content-list">
+                            <li><i class="fas fa-mountain"></i> सगरमाथा/चोमोलोङ्‌मा विवाद: वी.पी. कोइरालाको दावीपछि चीनले सगरमाथा नेपालमा परेको नक्सालाई मान्यता दिए</li>
+                            <li><i class="fas fa-handshake"></i> २०१७ असार १५: मुस्ताङमा घटना - नेपाली सेनाका सुवेदार बोमप्रसाद मारिए, चीनले क्षमा मागी ५०,००० रुपियाँ क्षतिपूर्ति दिए</li>
+                            <li><i class="fas fa-users"></i> १९५९: तिब्बती शरणार्थीहरू नेपाल प्रवेश, चीन बिरोधी गतिविधि सञ्चालन</li>
+                            <li><i class="fas fa-user-tie"></i> १९६०: चीनका प्रधानमन्त्री चाउ एनलाई नेपालको संसदमा सम्बोधन गरे</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-vote-yea"></i> स्थानीय तह निर्वाचन २०७९</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <div class="stat-value">१.७७ करोड</div>
+                                <div class="stat-label">मतदाता</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">७९</div>
+                                <div class="stat-label">राजनीतिक दल</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">१</div>
+                                <div class="stat-label">चरण</div>
+                            </div>
+                        </div>
+                        
+                        <div class="highlight-box">
+                            <h4><i class="fas fa-chart-bar"></i> मतदाता विवरण:</h4>
+                            <ul class="content-list">
+                                <li><i class="fas fa-male"></i> पुरुष: ८९,९२,०१० (५०.७%)</li>
+                                <li><i class="fas fa-female"></i> महिला: ८७,४१,५३० (४९.३%)</li>
+                                <li><i class="fas fa-transgender-alt"></i> अन्य: १८३ (०.००१%)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Search Results -->
+            <section id="search-results" class="content-section hidden">
+                <div class="section-header">
+                    <h2><i class="fas fa-search"></i> खोज नतिजा</h2>
+                    <p class="section-subtitle" id="resultCount">० नतिजा फेला पर्यो</p>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div id="searchResultsContainer">
+                            <!-- Search results will be inserted here by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="footer-content">
+                <p>नेपालको इतिहास र राजनीति - सामान्य ज्ञान</p>
+                <p class="footer-note">स्रोत: विभिन्न ऐतिहासिक दस्तावेजहरू</p>
+                <div class="footer-actions">
+                    <button class="footer-btn" id="scrollToTop">
+                        <i class="fas fa-arrow-up"></i> माथि जानुहोस्
+                    </button>
+                    <button class="footer-btn" id="shareApp">
+                        <i class="fas fa-share"></i> साझा गर्नुहोस्
+                    </button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

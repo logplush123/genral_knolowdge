@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>नेपाली साहित्यकारहरू: एक सन्क्षिप्त अध्ययन</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation & Header -->
+    <header class="book-header">
+        <div class="header-content">
+            <button class="menu-toggle" aria-label="मेनु खोल्नुहोस्">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h1 class="title-main">नेपाली साहित्यकारहरू</h1>
+            <p class="subtitle">एक सन्क्षिप्त अध्ययन</p>
+            <div class="header-actions">
+                <button class="theme-toggle" aria-label="थिम परिवर्तन गर्नुहोस्">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="search-toggle" aria-label="खोजी गर्नुहोस्">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="साहित्यकार वा कृतिको नाम लेख्नुहोस्...">
+            <button class="close-search"><i class="fas fa-times"></i></button>
+            <div id="searchResults" class="search-results"></div>
+        </div>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2><i class="fas fa-book-open"></i> विषयसूची</h2>
+            <button class="close-sidebar"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="toc-list">
+            <li><a href="#intro" class="toc-link"><i class="fas fa-star"></i> परिचय</a></li>
+            <li><a href="#bhanubhakta" class="toc-link"><i class="fas fa-user"></i> भानुभक्त आचार्य</a></li>
+            <li><a href="#motiram" class="toc-link"><i class="fas fa-user"></i> मोतीराम भट्ट</a></li>
+            <li><a href="#devkota" class="toc-link"><i class="fas fa-user"></i> लक्ष्मीप्रसाद देवकोटा</a></li>
+            <li><a href="#timeline" class="toc-link"><i class="fas fa-timeline"></i> कालक्रम</a></li>
+            <li><a href="#comparison" class="toc-link"><i class="fas fa-balance-scale"></i> तुलना तालिका</a></li>
+            <li><a href="#honors" class="toc-link"><i class="fas fa-award"></i> सम्मान र उपाधिहरू</a></li>
+            <li><a href="#references" class="toc-link"><i class="fas fa-book"></i> सन्दर्भ सामग्री</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <div class="progress-container">
+                <div class="progress-label">पढाइ प्रगति</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="readingProgress"></div>
+                </div>
+                <span id="progressPercentage">0%</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="book-content">
+        <!-- Introduction -->
+        <section id="intro" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-number">१.</span>
+                <h2 class="chapter-title">परिचय</h2>
+            </div>
+            <div class="chapter-content">
+                <p>नेपाली साहित्यको इतिहास सयौं वर्ष पुरानो छ, जसमा विभिन्न कालखण्ड, शैली र प्रवृत्तिहरूको समावेश छ। यस अनुप्रयोगमा हामी तीन प्रमुख साहित्यकारहरूको जीवनी र कृतिहरूको विस्तृत अध्ययन प्रस्तुत गर्दछौं जसले नेपाली साहित्यलाई नया आयाम दिए।</p>
+                
+                <div class="highlight-box">
+                    <h3><i class="fas fa-lightbulb"></i> महत्वपूर्ण तथ्य</h3>
+                    <p>नेपाली भाषाको आदिकवि भानुभक्त आचार्य हुन्, जसले वि.सं. १९१० सम्म रामायणका विभिन्न काण्डहरूको नेपाली भाषामा अनुवाद गरे। यसले नेपाली साहित्यको आधारशिला राख्यो।</p>
+                </div>
+                
+                <div class="content-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
+                        <div class="stat-value">३+</div>
+                        <div class="stat-label">प्रमुख साहित्यकार</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-book"></i></div>
+                        <div class="stat-value">१००+</div>
+                        <div class="stat-label">कृतिहरू</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
+                        <div class="stat-value">२००+</div>
+                        <div class="stat-label">वर्षको इतिहास</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bhanubhakta Acharya -->
+        <section id="bhanubhakta" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-number">२.</span>
+                <h2 class="chapter-title">आदिकवि भानुभक्त आचार्य</h2>
+                <span class="author-years">(वि.सं. १८७१ - १९२५)</span>
+            </div>
+            
+            <div class="author-profile">
+                <div class="profile-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                </div>
+                <div class="profile-details">
+                    <h3>जीवन परिचय</h3>
+                    <p><strong>जन्म:</strong> वि.सं. १८७१ असार २९ गते, तनहुँ जिल्लाको चुँदी रम्घा गाउँ</p>
+                    <p><strong>मृत्यु:</strong> वि.सं. १९२५ आश्विन शुक्ल पञ्चमी, ५४ वर्षको उमेरमा</p>
+                    <p><strong>बाल्यकालको नाम:</strong> देवीभक्त आचार्य</p>
+                    <p><strong>पिता:</strong> धनञ्जय आचार्य</p>
+                    <p><strong>बाजे:</strong> श्रीकृष्ण आचार्य (संस्कृतका प्रकाण्ड विद्वान)</p>
+                </div>
+            </div>
+            
+            <div class="chapter-content">
+                <h3><i class="fas fa-graduation-cap"></i> शिक्षा र प्रारम्भिक जीवन</h3>
+                <p>भानुभक्त आचार्यले आफ्ना बाजे श्रीकृष्ण आचार्यसँग काशी गएर संस्कृत र हिन्दी भाषाको अध्ययन गरे। बाजेको मृत्युपछि गाउँ फर्केर उनले लोकलय र लोकभाषामा कविता लेख्न थाले। उनको सबैभन्दा महत्त्वपूर्ण योगदान भनेको रामायणको नेपाली अनुवाद हो।</p>
+                
+                <h3><i class="fas fa-pen-fancy"></i> साहित्यिक योगदान</h3>
+                <p>भानुभक्तलाई सर्वप्रथम "आदिकवि" को पदवी दिने मोतीराम भट्ट थिए। बाबुराम आचार्य, तारानाथ शर्मा, लक्ष्मीप्रसाद देवकोटा जस्ता विद्वानहरूले उनलाई नेपाली साहित्यको प्रथम ध्वनि र आदि प्रतिनिधि कवि मानेका छन्।</p>
+                
+                <div class="works-container">
+                    <h3><i class="fas fa-book-open"></i> प्रमुख कृतिहरू</h3>
+                    <div class="works-category">
+                        <h4>काव्य सिर्जना</h4>
+                        <table class="works-table">
+                            <thead>
+                                <tr>
+                                    <th>कृति</th>
+                                    <th>वर्ष (वि.सं.)</th>
+                                    <th>टिप्पणी</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>रामायण (महाकाव्य)</td>
+                                    <td>१८९८-१९१०</td>
+                                    <td>बालकाण्ड १८९८ मा लेखिएको</td>
+                                </tr>
+                                <tr>
+                                    <td>प्रश्नोत्तरी</td>
+                                    <td>१९१०</td>
+                                    <td>धार्मिक प्रश्नोत्तर</td>
+                                </tr>
+                                <tr>
+                                    <td>भक्तमाला</td>
+                                    <td>१९१०</td>
+                                    <td>भक्ति काव्य</td>
+                                </tr>
+                                <tr>
+                                    <td>बधुशिक्षा</td>
+                                    <td>१९१९</td>
+                                    <td>नारी शिक्षा सम्बन्धी</td>
+                                </tr>
+                                <tr>
+                                    <td>रामगीता</td>
+                                    <td>१९१९</td>
+                                    <td>दार्शनिक रचना</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="works-category">
+                        <h4>कविता सङ्कलन र फुटकर कविताहरू</h4>
+                        <div class="works-list">
+                            <div class="work-item">कान्तिपुर</div>
+                            <div class="work-item">बालाजी वर्णन</div>
+                            <div class="work-item">गिरधारीको झेल</div>
+                            <div class="work-item">भोलि भोलि भन्दैमा सबघर बित्तीगो बक्सियोस्</div>
+                            <div class="work-item">आज भोलि आदि (वि.सं. १८८९ देखि १९२५ सम्म)</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="legacy-section">
+                    <h3><i class="fas fa-monument"></i> विरासत र प्रभाव</h3>
+                    <p>भानुभक्त आचार्यले नेपाली भाषालाई साहित्यिक भाषाको रूपमा स्थापित गरे। उनको रामायण अनुवादले नेपाली भाषाको समृद्धि र साहित्यिक परम्पराको शुरुआत गर्यो। आज पनि उनलाई नेपाली साहित्यका जनकको रूपमा सम्मान गरिन्छ।</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Motiram Bhatta -->
+        <section id="motiram" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-number">३.</span>
+                <h2 class="chapter-title">युवक कवि मोतीराम भट्ट</h2>
+                <span class="author-years">(वि.सं. १९२३ - १९५३)</span>
+            </div>
+            
+            <div class="author-profile">
+                <div class="profile-image">
+                    <div class="image-placeholder" style="background-color: #e3f2fd;">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                </div>
+                <div class="profile-details">
+                    <h3>जीवन परिचय</h3>
+                    <p><strong>जन्म:</strong> वि.सं. १९२३ भदौ औँसी (कुरोऔँसी), काठमाडौँको भोसीको टोल</p>
+                    <p><strong>मृत्यु:</strong> वि.सं. १९५३ भदौ औँसी, ३० वर्षको उमेरमा (जन्मेकै तिथिमा)</p>
+                    <p><strong>शिक्षा:</strong> काशीबाट फारसी, हिन्दी भाषाको अध्ययन (वि.सं. १९३७)</p>
+                </div>
+            </div>
+            
+            <div class="chapter-content">
+                <h3><i class="fas fa-briefcase"></i> साहित्यिक सेवा र उपलब्धिहरू</h3>
+                <p>मोतीराम भट्टले बनारसमा भारतेन्दु हरिश्चन्द्रको साहित्यिक समूहमा प्रवेश गरे र नेपालमा "मोतिमण्डली" गठन गरे। उनले "गोर्खा भारतजीवन" पत्रिकाको सम्पादन गरेर नेपाली पत्रिकाका प्रथम पत्रकार र सम्पादक बने। भानुभक्त आचार्यको बालकाण्ड र सम्पूर्ण रामायण छपाई प्रकाशन गरेकोमा उनको ठूलो योगदान छ।</p>
+                
+                <div class="works-container">
+                    <h3><i class="fas fa-book-open"></i> साहित्यिक सिर्जना</h3>
+                    
+                    <div class="works-category">
+                        <h4>कविता तथा काव्य</h4>
+                        <table class="works-table">
+                            <thead>
+                                <tr>
+                                    <th>कृति</th>
+                                    <th>वर्ष (वि.सं.)</th>
+                                    <th>टिप्पणी</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>मनोद्वेग प्रवाह (कवितासङ्ग्रह)</td>
+                                    <td>लेखन: १९४२, प्रकाशन: १९५७</td>
+                                    <td>पहिलो कवितासङ्ग्रह</td>
+                                </tr>
+                                <tr>
+                                    <td>पञ्चक प्रपञ्च र तीजको कथा</td>
+                                    <td>१९४४</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>पिकदूत</td>
+                                    <td>रचना: १९४५, प्रकाशन: २०१९</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>गजेन्द्रमोक्ष (खण्डकाव्य)</td>
+                                    <td>१९४८</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>सङ्गीतचन्द्रोदय (गजल)</td>
+                                    <td>१९५१</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>गफाष्टक, उषाचरित्र (खण्डकाव्य)</td>
+                                    <td>१९५७</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="works-category">
+                        <h4>नाटक</h4>
+                        <div class="works-list">
+                            <div class="work-item">शकुन्तला (वि.सं. १९४४)</div>
+                            <div class="work-item">प्रियदर्शिका (वि.सं. १९४५, प्रकाशन २०९६)</div>
+                            <div class="work-item">पद्मावती (अपूर्ण, वि.सं. १९४५)</div>
+                            <div class="work-item">हुस्न ए फरोज ए दिल (उर्दू)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="works-category">
+                        <h4>अन्य विधा</h4>
+                        <div class="works-list">
+                            <div class="work-item">गुलसनोवर (आख्यान, वि.सं. १९४६)</div>
+                            <div class="work-item">आदिकवि भानुभक्त आचार्यको जीवन चरित्र (गद्य, वि.सं. १९४८)</div>
+                            <div class="work-item">शकुनौंती (शकुनविचार)</div>
+                            <div class="work-item">स्वप्नाध्याय (स्वप्नविचार)</div>
+                            <div class="work-item">उखानको बखान</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="legacy-section">
+                    <h3><i class="fas fa-landmark"></i> संस्थागत योगदान</h3>
+                    <p>मोतीराम भट्टले वि.सं. १९४५ मा काठमाडौँको न्हेँहीटीमा मोतीकृष्ण पुस्तकालयको स्थापना गरे। वि.सं. १९५० मा "पाशुपत छापाखाना" स्थापना गरेर नेपाली साहित्यको प्रकाशन क्षेत्रमा ठूलो योगदान पुर्याए।</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Laxmi Prasad Devkota -->
+        <section id="devkota" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-number">४.</span>
+                <h2 class="chapter-title">महाकवि लक्ष्मीप्रसाद देवकोटा</h2>
+                <span class="author-years">(वि.सं. १९६६ - २०१६)</span>
+            </div>
+            
+            <div class="author-profile">
+                <div class="profile-image">
+                    <div class="image-placeholder" style="background-color: #f3e5f5;">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                </div>
+                <div class="profile-details">
+                    <h3>जीवन परिचय</h3>
+                    <p><strong>जन्म:</strong> वि.सं. १९६६ कार्तिक २७ गते (लक्ष्मीपूजाका दिन), काठमाडौँको धोबीधारा</p>
+                    <p><strong>मृत्यु:</strong> वि.सं. २०१६ भदौ २९ गते, क्यान्सर रोगबाट</p>
+                    <p><strong>शिक्षा:</strong> बी.ए., बी.एल., एम.ए. (अंग्रेजी साहित्य)</p>
+                </div>
+            </div>
+            
+            <div class="chapter-content">
+                <h3><i class="fas fa-star"></i> साहित्यिक विशेषता</h3>
+                <p>लक्ष्मीप्रसाद देवकोटा नेपाली साहित्यका विराट प्रतिभा, अद्वितीय साहित्यकार हुन्। उनले नेपाली कवितामा रोमान्टिक धारा (मुक्त, स्वच्छन्दवादी प्रवृत्ति) को सूत्रपात गरे। एकै दिनमा एक काव्य लेख्ने, १० दिनमा "सुलोचना" महाकाव्य र ३ महिनामा "शाकुन्तल" महाकाव्य लेखेका देवकोटाको साहित्य सिर्जनाको संसार विशाल छ।</p>
+                
+                <div class="works-container">
+                    <h3><i class="fas fa-book-open"></i> साहित्यिक सिर्जना</h3>
+                    
+                    <div class="works-category">
+                        <h4>कविता सङ्ग्रह</h4>
+                        <div class="works-grid">
+                            <div class="work-card">
+                                <div class="work-title">पहाडी पुकार</div>
+                                <div class="work-year">वि.सं. २००५</div>
+                            </div>
+                            <div class="work-card">
+                                <div class="work-title">भिखारी</div>
+                                <div class="work-year">वि.सं. २०१०</div>
+                            </div>
+                            <div class="work-card">
+                                <div class="work-title">छहरा</div>
+                                <div class="work-year">वि.सं. २०१२</div>
+                            </div>
+                            <div class="work-card">
+                                <div class="work-title">मृत्युशैयाबाट</div>
+                                <div class="work-year">वि.सं. २०१६</div>
+                            </div>
+                            <div class="work-card">
+                                <div class="work-title">गाईने गीत</div>
+                                <div class="work-year">वि.सं. २०२४</div>
+                            </div>
+                            <div class="work-card">
+                                <div class="work-title">भावना गाड्गये</div>
+                                <div class="work-year">वि.सं. २०२४</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="works-category">
+                        <h4>खण्डकाव्य</h4>
+                        <div class="works-list">
+                            <div class="work-item">मुनामदन (वि.सं. १९९१) - सर्वाधिक लोकप्रिय कृति</div>
+                            <div class="work-item">कुञ्जिनी (वि.सं. २००२)</div>
+                            <div class="work-item">मैना (वि.सं. २००९)</div>
+                            <div class="work-item">रावण जटायु युद्ध (वि.सं. २०११)</div>
+                            <div class="work-item">लुनी (वि.सं. २०२३)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="works-category">
+                        <h4>महाकाव्य</h4>
+                        <table class="works-table">
+                            <thead>
+                                <tr>
+                                    <th>कृति</th>
+                                    <th>वर्ष (वि.सं.)</th>
+                                    <th>टिप्पणी</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>शाकुन्तल</td>
+                                    <td>२००२</td>
+                                    <td>३ महिनामा लेखिएको</td>
+                                </tr>
+                                <tr>
+                                    <td>सुलोचना</td>
+                                    <td>२००३</td>
+                                    <td>१० दिनमा लेखिएको</td>
+                                </tr>
+                                <tr>
+                                    <td>महाराणा प्रताप</td>
+                                    <td>२०२४</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>वनकुसुम</td>
+                                    <td>२०२४</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="works-category">
+                        <h4>अन्य विधा</h4>
+                        <div class="works-list">
+                            <div class="work-item">सावित्री सत्यवान (नाटक, वि.सं. १९९७)</div>
+                            <div class="work-item">लक्ष्मी निबन्ध सङ्ग्रह (वि.सं. २००२)</div>
+                            <div class="work-item">चम्पा (उपन्यास, वि.सं. २०२४)</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="legacy-section">
+                    <h3><i class="fas fa-award"></i> उपलब्धि र सम्मान</h3>
+                    <p>देवकोटा राणाकालमा भाषा अनुवाद परिषद्मा ग्रन्थकार र त्रिचन्द्र कलेजका प्राध्यापक भए। वि.सं. २००४ मा बनारस गई "युगवाणी" पत्रिकाको सम्पादन गरे। उनी राष्ट्रिय विद्यापीठका उपकुलपति र डा. के.आई सिंहको मन्त्रिमण्डलमा शिक्षामन्त्री भए। वि.सं. २०२३ सालमा उनलाई "त्रिभुवन पुरस्कार" प्रदान गरियो।</p>
+                    
+                    <div class="quote-box">
+                        <p>"मुनामदन बाहेक मेरा अरु सबै कृति जलाई दिनु"</p>
+                        <cite>- मृत्युशैयाबाट देवकोटाको अन्तिम इच्छा</cite>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section id="timeline" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-number">५.</span>
+                <h2 class="chapter-title">नेपाली साहित्यको कालक्रम</h2>
+            </div>
+            <div class="chapter-content">
+                <div class="timeline-container">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">वि.सं. १८७१</div>
+                            <div class="timeline-content">
+                                <h4>भानुभक्त आचार्यको जन्म</h4>
+                                <p>तनहुँ जिल्लाको चुँदी रम्घा गाउँमा जन्म</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">वि.सं. १८९८</div>
+                            <div class="timeline-content">
+                                <h4>रामायण बालकाण्ड प्रकाशन</h4>
+                                <p>भानुभक्त आचार्यले रामायणको बालकाण्ड लेखे</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">वि.सं. १९१०</div>
+                            <div class="timeline-content">
+                                <h4>रामायण सम्पूर्ण भयो</h4>
+                                <p>भानुभक्तले रामायणका अन्य काण्डहरू लेखे</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">वि.सं. १९२३</div>
+                            <div class="timeline-content">
+                                <h4>मोतीराम भट्टको जन्म</h4>
+                                <p>काठमाडौँको भोसीको टोलमा जन्म</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">वि.सं. १९२५</div>
+                            <div class="timeline-content">
+                                <h4>भानुभक्त आचार्यको निधन</h4>
+                                <p>५४ वर्षको उमेरमा रम्घा गाउँमा निधन</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">वि.सं. १९४४</div>
+                            <div class="timeline-content">
+                                <h4>भानुभक्तको सम्पूर्ण रामायण प्रकाशन</h4>
+                                <p>मोतीराम भट्टले भानुभक्तको सम्पूर्ण रामायण छपाई प्रकाशन गरे</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">वि.सं. १९५३</div>
+                            <div class="timeline-content">
+                                <h4>मोतीराम भट्टको निधन</h4>
+                                <p>३० वर्षको उमेरमा जन्मेकै तिथिमा निधन</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">वि.सं. १९६६</div>
+                            <div class="timeline-content">
+                                <h4>लक्ष्मीप्रसाद देवकोटाको जन्म</h4>
+                                <p>काठमाडौँको धोबीधारामा जन्म</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">वि.सं. १९९१</div>
+                            <div class="timeline-content">
+                                <h4>मुनामदन प्रकाशन</h4>
+                                <p>देवकोटाको सर्वाधिक लोकप्रिय कृति मुनामदन प्रकाशित</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">वि.सं. २०१६</div>
+                            <div class="timeline-content">
+                                <h4>लक्ष्मीप्रसाद देवकोटाको निधन</h4>
+                                <p>क्यान्सर रोगबाट निधन</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Table -->
+        <section id="comparison" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-number">६.</span>
+                <h2 class="chapter-title">साहित्यकारहरूको तुलनात्मक अध्ययन</h2>
+            </div>
+            <div class="chapter-content">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>विवरण</th>
+                            <th>भानुभक्त आचार्य</th>
+                            <th>मोतीराम भट्ट</th>
+                            <th>लक्ष्मीप्रसाद देवकोटा</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>जीवनकाल</td>
+                            <td>वि.सं. १८७१-१९२५ (५४ वर्ष)</td>
+                            <td>वि.सं. १९२३-१९५३ (३० वर्ष)</td>
+                            <td>वि.सं. १९६६-२०१६ (५० वर्ष)</td>
+                        </tr>
+                        <tr>
+                            <td>उपाधि</td>
+                            <td>आदिकवि, जातीय कवि</td>
+                            <td>युवक कवि, शृङ्गारिक कवि</td>
+                            <td>महाकवि, नेपाली साहित्यका विराट प्रतिभा</td>
+                        </tr>
+                        <tr>
+                            <td>मुख्य योगदान</td>
+                            <td>रामायणको नेपाली अनुवाद</td>
+                            <td>भानुभक्तको कृतिको प्रकाशन, पत्रकारिता</td>
+                            <td>नेपाली कवितामा रोमान्टिक धाराको सूत्रपात</td>
+                        </tr>
+                        <tr>
+                            <td>प्रमुख कृति</td>
+                            <td>रामायण (महाकाव्य)</td>
+                            <td>मनोद्वेग प्रवाह, गजेन्द्रमोक्ष</td>
+                            <td>मुनामदन, शाकुन्तल, सुलोचना</td>
+                        </tr>
+                        <tr>
+                            <td>शैली</td>
+                            <td>धार्मिक, अनुवादात्मक, सरल भाषा</td>
+                            <td>शृङ्गारिक, पत्रकारितात्मक</td>
+                            <td>रोमान्टिक, स्वच्छन्दवादी, दार्शनिक</td>
+                        </tr>
+                        <tr>
+                            <td>भाषा दक्षता</td>
+                            <td>संस्कृत, हिन्दी, नेपाली</td>
+                            <td>नेपाली, हिन्दी, फारसी</td>
+                            <td>नेपाली, अंग्रेजी, संस्कृत, हिन्दी</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Honors and Awards -->
+        <section id="honors" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-number">७.</span>
+                <h2 class="chapter-title">सम्मान र उपाधिहरू</h2>
+            </div>
+            <div class="chapter-content">
+                <div class="honors-grid">
+                    <div class="honor-card">
+                        <div class="honor-icon"><i class="fas fa-crown"></i></div>
+                        <h3>भानुभक्त आचार्य</h3>
+                        <ul>
+                            <li>आदिकवि (मोतीराम भट्टद्वारा प्रदत्त)</li>
+                            <li>जातीय कवि</li>
+                            <li>नेपाली साहित्यका प्रथम ध्वनि (लक्ष्मीप्रसाद देवकोटा)</li>
+                            <li>आदि प्रतिनिधि कवि (हृदयचन्द्रसिंह प्रधान)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="honor-card">
+                        <div class="honor-icon"><i class="fas fa-feather-alt"></i></div>
+                        <h3>मोतीराम भट्ट</h3>
+                        <ul>
+                            <li>युवक कवि</li>
+                            <li>शृङ्गारिक कवि</li>
+                            <li>नेपाली पत्रिकाका प्रथम पत्रकार र सम्पादक</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="honor-card">
+                        <div class="honor-icon"><i class="fas fa-award"></i></div>
+                        <h3>लक्ष्मीप्रसाद देवकोटा</h3>
+                        <ul>
+                            <li>महाकवि</li>
+                            <li>त्रिभुवन पुरस्कार (वि.सं. २०२३)</li>
+                            <li>रोयल नेपाल एकेडेमीका आजीवन सदस्य</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="additional-honors">
+                    <h3><i class="fas fa-star"></i> अन्य प्रमुख साहित्यकारहरूका उपाधिहरू</h3>
+                    <table class="honors-table">
+                        <thead>
+                            <tr>
+                                <th>उपाधि</th>
+                                <th>साहित्यकार</th>
+                                <th>वास्तविक नाम</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>कवि शिरोमणि</td>
+                                <td>लेखनाथ पौड्याल</td>
+                                <td>लेखनाथ पौड्याल</td>
+                            </tr>
+                            <tr>
+                                <td>इतिहास शिरोमणि</td>
+                                <td>बाबुराम आचार्य</td>
+                                <td>बाबुराम आचार्य</td>
+                            </tr>
+                            <tr>
+                                <td>आशुकवि</td>
+                                <td>शम्भुप्रसाद ढुङ्गेल</td>
+                                <td>शम्भुप्रसाद ढुङ्गेल</td>
+                            </tr>
+                            <tr>
+                                <td>गद्य कवि</td>
+                                <td>गोपालप्रसाद रिमाल</td>
+                                <td>गोपालप्रसाद रिमाल</td>
+                            </tr>
+                            <tr>
+                                <td>युग कवि</td>
+                                <td>सिद्धिचरण श्रेष्ठ</td>
+                                <td>सिद्धिचरण श्रेष्ठ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section id="references" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-number">८.</span>
+                <h2 class="chapter-title">सन्दर्भ सामग्री</h2>
+            </div>
+            <div class="chapter-content">
+                <div class="references-list">
+                    <div class="reference-item">
+                        <h3><i class="fas fa-book"></i> पुस्तकहरू</h3>
+                        <ul>
+                            <li>भानुभक्त ग्रन्थावली (पारसमणि प्रधान, वि.सं. २००९)</li>
+                            <li>पुराना कवि र कविता (बाबुराम आचार्य, वि.सं. २००३)</li>
+                            <li>भानुभक्त एक समीक्षा (हृदयचन्द्रसिंह प्रधान, वि.सं. २०१३)</li>
+                            <li>नेपाली साहित्यको इतिहास (तारानाथ शर्मा)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="reference-item">
+                        <h3><i class="fas fa-newspaper"></i> पत्रिकाहरू</h3>
+                        <ul>
+                            <li>शारदा पत्रिका</li>
+                            <li>गोर्खा भारतजीवन (मोतीराम भट्टद्वारा सम्पादित)</li>
+                            <li>युगवाणी (लक्ष्मीप्रसाद देवकोटाद्वारा सम्पादित)</li>
+                            <li>गोरखापत्र</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="reference-item">
+                        <h3><i class="fas fa-university"></i> संस्थानहरू</h3>
+                        <ul>
+                            <li>नेपाल प्रज्ञा प्रतिष्ठान</li>
+                            <li>रोयल नेपाल एकेडेमी (हाल नेपाल प्रज्ञा प्रतिष्ठान)</li>
+                            <li>त्रिभुवन विश्वविद्यालय</li>
+                            <li>नेपाल भाषानुवाद परिषद्</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="data-source">
+                    <h3><i class="fas fa-database"></i> तथ्य स्रोत</h3>
+                    <p>यस अनुप्रयोगमा प्रयोग गरिएका तथ्यहरू निम्न स्रोतहरूबाट संकलन गरिएका छन्:</p>
+                    <ul>
+                        <li>नेपाली साहित्यकार र तिनका रचना (परीक्षा दिग्दर्शन सामग्री)</li>
+                        <li>नेपाली साहित्यको इतिहास (विभिन्न आधिकारिक पाठ्यपुस्तक)</li>
+                        <li>भानुभक्त आचार्यः जीवनी र कृतिहरू (शैक्षिक प्रकाशन)</li>
+                        <li>महाकवि देवकोटा： एक अध्ययन (साहित्यिक अनुसन्धान)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="book-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-book-reader"></i>
+                    <span>नेपाली साहित्य संग्रह</span>
+                </div>
+                <div class="footer-info">
+                    <p>यो अनुप्रयोग नेपाली साहित्यको अध्ययन र संरक्षणको लागि समर्पित छ। सामग्री शैक्षिक उद्देश्यका लागि तयार गरिएको हो।</p>
+                    <p class="copyright">© Log Plus</p>
+                </div>
+                <div class="footer-actions">
+                    <button id="scrollTopBtn" class="footer-btn" title="शीर्षमा जानुहोस्">
+                        <i class="fas fa-arrow-up"></i>
+                    </button>
+                    <button id="printBtn" class="footer-btn" title="प्रिन्ट गर्नुहोस्">
+                        <i class="fas fa-print"></i>
+                    </button>
+                    <button id="shareBtn" class="footer-btn" title="सेयर गर्नुहोस्">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="app.js"></script>
+    <script src="units.js"></script>
+</body>
+</html>
