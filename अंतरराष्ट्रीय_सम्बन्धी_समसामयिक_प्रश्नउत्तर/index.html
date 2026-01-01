@@ -1,33 +1,32 @@
 <!DOCTYPE html>
-<html lang="ne">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>नेपाली IQ & GK च्यालेन्ज</title>
+    <title>Nepali IQ & GK Challenge</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Main Menu Screen -->
     <div id="menu-screen" class="screen active">
         <div class="container">
             <header class="app-header">
-                <h1><i class="fas fa-brain"></i> नेपाली IQ & GK च्यालेन्ज</h1>
-                <p class="subtitle">आफ्नो ज्ञानको परीक्षण गर्नुहोस्</p>
+                <h1><i class="fas fa-brain"></i> Nepali IQ & GK Challenge</h1>
+                <p class="subtitle">Test your knowledge</p>
             </header>
             
             <div class="stats-card">
                 <div class="stat-item">
                     <span class="stat-number">69</span>
-                    <span class="stat-label">प्रश्नहरू</span>
+                    <span class="stat-label">Questions</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">3</span>
-                    <span class="stat-label">सेटहरू</span>
+                    <span class="stat-label">Sets</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">100%</span>
-                    <span class="stat-label">नेपाली</span>
+                    <span class="stat-label">English</span>
                 </div>
             </div>
             
@@ -35,59 +34,58 @@
                 <div class="set-card" data-set="set1">
                     <div class="set-header">
                         <i class="fas fa-graduation-cap"></i>
-                        <h2>सेट १: अभ्यास</h2>
+                        <h2>Set 1: Practice</h2>
                     </div>
                     <div class="set-details">
-                        <p><i class="fas fa-question-circle"></i> २५ प्रश्नहरू</p>
-                        <p><i class="fas fa-clock"></i> कुल ५ मिनेट</p>
+                        <p><i class="fas fa-question-circle"></i> 25 Questions</p>
+                        <p><i class="fas fa-clock"></i> 5 Minutes Total</p>
                     </div>
-                    <button class="btn-select" onclick="startQuiz('set1')">सुरु गर्नुहोस्</button>
+                    <button class="btn-select" onclick="startQuiz('set1')">Start Quiz</button>
                 </div>
                 
                 <div class="set-card" data-set="set2">
                     <div class="set-header">
                         <i class="fas fa-running"></i>
-                        <h2>सेट २: मानक</h2>
+                        <h2>Set 2: Standard</h2>
                     </div>
                     <div class="set-details">
-                        <p><i class="fas fa-question-circle"></i> २५ प्रश्नहरू</p>
-                        <p><i class="fas fa-clock"></i> प्रश्न प्रति १५ सेकेन्ड</p>
+                        <p><i class="fas fa-question-circle"></i> 25 Questions</p>
+                        <p><i class="fas fa-clock"></i> 15s per Question</p>
                     </div>
-                    <button class="btn-select" onclick="startQuiz('set2')">सुरु गर्नुहोस्</button>
+                    <button class="btn-select" onclick="startQuiz('set2')">Start Quiz</button>
                 </div>
                 
                 <div class="set-card" data-set="set3">
                     <div class="set-header">
                         <i class="fas fa-crown"></i>
-                        <h2>सेट ३: विशेषज्ञ</h2>
+                        <h2>Set 3: Expert</h2>
                     </div>
                     <div class="set-details">
-                        <p><i class="fas fa-question-circle"></i> १९ प्रश्नहरू</p>
-                        <p><i class="fas fa-clock"></i> प्रश्न प्रति १० सेकेन्ड</p>
+                        <p><i class="fas fa-question-circle"></i> 19 Questions</p>
+                        <p><i class="fas fa-clock"></i> 10s per Question</p>
                     </div>
-                    <button class="btn-select" onclick="startQuiz('set3')">सुरु गर्नुहोस्</button>
+                    <button class="btn-select" onclick="startQuiz('set3')">Start Quiz</button>
                 </div>
             </div>
             
             <div class="instructions">
-                <h3><i class="fas fa-info-circle"></i> निर्देशनहरू</h3>
+                <h3><i class="fas fa-info-circle"></i> Instructions</h3>
                 <ul>
-                    <li>प्रत्येक सेटको लागि समय सीमा फरक छ</li>
-                    <li>उत्तर छनोट गरेपछि स्वतः अर्को प्रश्नमा जानेछ</li>
-                    <li>समय सकिएमा गलत मानिनेछ</li>
-                    <li>अन्त्यमा तपाईंको स्कोर देखाइनेछ</li>
+                    <li>Each set has a different time limit.</li>
+                    <li>Automatic progression after selecting an answer.</li>
+                    <li>Out of time counts as a wrong answer.</li>
+                    <li>Your final score will be shown at the end.</li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <!-- Quiz Screen -->
     <div id="quiz-screen" class="screen">
         <div class="quiz-container">
             <div class="quiz-header">
                 <div class="quiz-info">
-                    <span id="current-set-name">सेट १: अभ्यास</span>
-                    <span id="question-counter">प्रश्न १/२५</span>
+                    <span id="current-set-name">Set 1: Practice</span>
+                    <span id="question-counter">Question 1/25</span>
                 </div>
                 
                 <div class="timer-container">
@@ -102,35 +100,30 @@
                 
                 <div class="score-display">
                     <i class="fas fa-star"></i>
-                    <span>स्कोर: <span id="score">0</span></span>
+                    <span>Score: <span id="score">0</span></span>
                 </div>
             </div>
             
             <div class="question-container">
-                <div class="question-number" id="q-number">प्रश्न १</div>
-                <div class="question-text" id="question-text">
-                    प्रश्न यहाँ प्रदर्शित हुनेछ...
-                </div>
+                <div class="question-number" id="q-number">Question 1</div>
+                <div id="question-text" class="question-text">Loading question...</div>
             </div>
             
-            <div class="options-container" id="options-container">
-                <!-- Options will be inserted here by JavaScript -->
-            </div>
+            <div class="options-container" id="options-container"></div>
             
             <div class="quiz-controls">
-                <button id="quit-btn" class="btn-quit" onclick="quitQuiz()">
-                    <i class="fas fa-sign-out-alt"></i> छोड्नुहोस्
+                <button id="quit-btn" class="btn-quit" onclick="showQuitModal()">
+                    <i class="fas fa-sign-out-alt"></i> Quit Quiz
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- Results Screen -->
     <div id="results-screen" class="screen">
         <div class="results-container">
             <div class="results-header">
-                <h1><i class="fas fa-trophy"></i> परिणाम</h1>
-                <p id="set-result-name">सेट १: अभ्यास</p>
+                <h1><i class="fas fa-trophy"></i> Results</h1>
+                <p id="set-result-name">Set 1: Practice</p>
             </div>
             
             <div class="score-circle">
@@ -138,40 +131,47 @@
                     <span id="final-score">0</span>
                     <span class="total-score">/ <span id="total-questions">25</span></span>
                 </div>
-                <p class="score-label">अन्तिम स्कोर</p>
+                <p class="score-label">Final Score</p>
             </div>
             
             <div class="results-details">
                 <div class="result-item correct">
-                    <span class="result-label">सही उत्तर</span>
+                    <span class="result-label">Correct</span>
                     <span id="correct-count" class="result-value">0</span>
                 </div>
                 <div class="result-item wrong">
-                    <span class="result-label">गलत उत्तर</span>
+                    <span class="result-label">Wrong</span>
                     <span id="wrong-count" class="result-value">0</span>
                 </div>
                 <div class="result-item skipped">
-                    <span class="result-label">बाँकी</span>
+                    <span class="result-label">Skipped</span>
                     <span id="skipped-count" class="result-value">0</span>
                 </div>
                 <div class="result-item time">
-                    <span class="result-label">बाँकी समय</span>
+                    <span class="result-label">Time Left</span>
                     <span id="time-left" class="result-value">00:00</span>
                 </div>
             </div>
             
             <div class="results-message">
-                <h3 id="result-message">उत्कृष्ट प्रदर्शन!</h3>
-                <p id="result-description">तपाईंले राम्रो ज्ञान प्रदर्शन गर्नुभयो।</p>
+                <h3 id="result-message">Excellent!</h3>
+                <p id="result-description">Great job on the quiz!</p>
             </div>
             
             <div class="results-buttons">
-                <button onclick="restartQuiz()" class="btn-restart">
-                    <i class="fas fa-redo"></i> फेरि खेल्नुहोस्
-                </button>
-                <button onclick="goToMenu()" class="btn-menu">
-                    <i class="fas fa-home"></i> मुख्य मेनुमा जानुहोस्
-                </button>
+                <button onclick="restartQuiz()" class="btn-restart"><i class="fas fa-redo"></i> Play Again</button>
+                <button onclick="goToMenu()" class="btn-menu"><i class="fas fa-home"></i> Main Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="quit-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h3>Quit Quiz?</h3>
+            <p>Are you sure you want to quit? All progress will be lost.</p>
+            <div class="modal-buttons">
+                <button onclick="confirmQuit()" class="btn-confirm">Yes, Quit</button>
+                <button onclick="closeQuitModal()" class="btn-cancel">No, Stay</button>
             </div>
         </div>
     </div>
